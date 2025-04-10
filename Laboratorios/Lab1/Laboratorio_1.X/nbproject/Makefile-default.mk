@@ -84,7 +84,7 @@ endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/Laboratorio_1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=18f4550
-MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x3F4:0x3FF
+MP_LINKER_DEBUG_OPTION= 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -92,7 +92,11 @@ ${OBJECTDIR}/Laboratorio_1.o: Laboratorio_1.asm  nbproject/Makefile-${CND_CONF}.
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Laboratorio_1.o.d 
 	@${RM} ${OBJECTDIR}/Laboratorio_1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Laboratorio_1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Laboratorio_1.lst\" -e\"${OBJECTDIR}/Laboratorio_1.err\" $(ASM_OPTIONS)   -o\"${OBJECTDIR}/Laboratorio_1.o\" \"Laboratorio_1.asm\" 
+	@${FIXDEPS} dummy.d -e "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1.asm\" 
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1".O ${OBJECTDIR}/Laboratorio_1.o
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1".ERR ${OBJECTDIR}/Laboratorio_1.o.err
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1".LST ${OBJECTDIR}/Laboratorio_1.o.lst
+	@${RM}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1".HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Laboratorio_1.o"
 	@${FIXDEPS} "${OBJECTDIR}/Laboratorio_1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -101,7 +105,11 @@ ${OBJECTDIR}/Laboratorio_1.o: Laboratorio_1.asm  nbproject/Makefile-${CND_CONF}.
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Laboratorio_1.o.d 
 	@${RM} ${OBJECTDIR}/Laboratorio_1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Laboratorio_1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Laboratorio_1.lst\" -e\"${OBJECTDIR}/Laboratorio_1.err\" $(ASM_OPTIONS)   -o\"${OBJECTDIR}/Laboratorio_1.o\" \"Laboratorio_1.asm\" 
+	@${FIXDEPS} dummy.d -e "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1.asm\" 
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1".O ${OBJECTDIR}/Laboratorio_1.o
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1".ERR ${OBJECTDIR}/Laboratorio_1.o.err
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1".LST ${OBJECTDIR}/Laboratorio_1.o.lst
+	@${RM}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab1/Laboratorio_1.X/Laboratorio_1".HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/Laboratorio_1.o"
 	@${FIXDEPS} "${OBJECTDIR}/Laboratorio_1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -112,7 +120,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/Laboratorio_1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_PK3=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/Laboratorio_1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/Laboratorio_1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/Laboratorio_1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
