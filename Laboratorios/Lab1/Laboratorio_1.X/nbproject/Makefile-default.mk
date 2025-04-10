@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=
+SOURCEFILES_QUOTED_IF_SPACED=Laboratorio_1.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=
-POSSIBLE_DEPFILES=
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Laboratorio_1.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Laboratorio_1.o.d
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES=${OBJECTDIR}/Laboratorio_1.o
 
 # Source Files
-SOURCEFILES=
+SOURCEFILES=Laboratorio_1.asm
 
 
 CFLAGS=
@@ -88,7 +88,23 @@ MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x3F4:0x3FF
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/Laboratorio_1.o: Laboratorio_1.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Laboratorio_1.o.d 
+	@${RM} ${OBJECTDIR}/Laboratorio_1.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Laboratorio_1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Laboratorio_1.lst\" -e\"${OBJECTDIR}/Laboratorio_1.err\" $(ASM_OPTIONS)   -o\"${OBJECTDIR}/Laboratorio_1.o\" \"Laboratorio_1.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Laboratorio_1.o"
+	@${FIXDEPS} "${OBJECTDIR}/Laboratorio_1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
+${OBJECTDIR}/Laboratorio_1.o: Laboratorio_1.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Laboratorio_1.o.d 
+	@${RM} ${OBJECTDIR}/Laboratorio_1.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Laboratorio_1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Laboratorio_1.lst\" -e\"${OBJECTDIR}/Laboratorio_1.err\" $(ASM_OPTIONS)   -o\"${OBJECTDIR}/Laboratorio_1.o\" \"Laboratorio_1.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Laboratorio_1.o"
+	@${FIXDEPS} "${OBJECTDIR}/Laboratorio_1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 endif
 
 # ------------------------------------------------------------------------------------
