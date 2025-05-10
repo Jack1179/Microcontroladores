@@ -1,0 +1,56 @@
+MPLINK 5.08, LINKER
+Linker Map File - Created Thu May 08 12:34:39 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00001a
+  .config_300000_CLASE3.O    romdata   0x300000    program   0x000001
+  .config_300001_CLASE3.O    romdata   0x300001    program   0x000001
+  .config_300002_CLASE3.O    romdata   0x300002    program   0x000001
+  .config_300003_CLASE3.O    romdata   0x300003    program   0x000001
+  .config_300005_CLASE3.O    romdata   0x300005    program   0x000001
+  .config_300006_CLASE3.O    romdata   0x300006    program   0x000001
+  .config_300008_CLASE3.O    romdata   0x300008    program   0x000001
+  .config_300009_CLASE3.O    romdata   0x300009    program   0x000001
+  .config_30000A_CLASE3.O    romdata   0x30000a    program   0x000001
+  .config_30000B_CLASE3.O    romdata   0x30000b    program   0x000001
+  .config_30000C_CLASE3.O    romdata   0x30000c    program   0x000001
+  .config_30000D_CLASE3.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000019      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            38 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 Amarillo   0x00000a    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+                   Inicio   0x000000    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+                     Menu   0x000006    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+                     Rojo   0x00000e    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+             RojoAmarillo   0x000012    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+                    Verde   0x000006    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   Inicio   0x000000    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+                     Menu   0x000006    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+                    Verde   0x000006    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+                 Amarillo   0x00000a    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+                     Rojo   0x00000e    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+             RojoAmarillo   0x000012    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\clases\Clase3\clase3.X\clase3.asm
+
+
