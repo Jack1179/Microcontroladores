@@ -1,5 +1,5 @@
 MPLINK 5.08, LINKER
-Linker Map File - Created Thu Apr 10 15:30:52 2025
+Linker Map File - Created Tue Apr 15 00:46:44 2025
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -19,13 +19,13 @@ Linker Map File - Created Thu Apr 10 15:30:52 2025
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   Inicio   0x000000    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab1\Laboratorio_1.X\Laboratorio_1.asm
+                   Inicio   0x000000    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab1\Laboratorio_1.X\Laboratorio_1.asm
 
 
 
                               Symbols - Sorted by Address
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   Inicio   0x000000    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab1\Laboratorio_1.X\Laboratorio_1.asm
+                   Inicio   0x000000    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab1\Laboratorio_1.X\Laboratorio_1.asm
 
 
