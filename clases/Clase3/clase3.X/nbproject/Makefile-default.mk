@@ -92,11 +92,11 @@ ${OBJECTDIR}/clase3.o: clase3.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/clase3.o.d 
 	@${RM} ${OBJECTDIR}/clase3.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3.asm\" 
-	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".O ${OBJECTDIR}/clase3.o
-	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".ERR ${OBJECTDIR}/clase3.o.err
-	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".LST ${OBJECTDIR}/clase3.o.lst
-	@${RM}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".HEX 
+	@${FIXDEPS} dummy.d -e "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3.asm\" 
+	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".O ${OBJECTDIR}/clase3.o
+	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".ERR ${OBJECTDIR}/clase3.o.err
+	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".LST ${OBJECTDIR}/clase3.o.lst
+	@${RM}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/clase3.o"
 	@${FIXDEPS} "${OBJECTDIR}/clase3.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -105,11 +105,11 @@ ${OBJECTDIR}/clase3.o: clase3.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/clase3.o.d 
 	@${RM} ${OBJECTDIR}/clase3.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3.asm\" 
-	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".O ${OBJECTDIR}/clase3.o
-	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".ERR ${OBJECTDIR}/clase3.o.err
-	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".LST ${OBJECTDIR}/clase3.o.lst
-	@${RM}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".HEX 
+	@${FIXDEPS} dummy.d -e "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3.asm\" 
+	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".O ${OBJECTDIR}/clase3.o
+	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".ERR ${OBJECTDIR}/clase3.o.err
+	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".LST ${OBJECTDIR}/clase3.o.lst
+	@${RM}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/clases/Clase3/clase3.X/clase3".HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/clase3.o"
 	@${FIXDEPS} "${OBJECTDIR}/clase3.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
