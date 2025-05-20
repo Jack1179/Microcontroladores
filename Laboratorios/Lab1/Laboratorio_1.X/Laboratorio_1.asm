@@ -1,8 +1,8 @@
 
 include P18F4550.inc  
-;Tercera seccion de variables y punteros.
 
-aux1 equ 0x0 ;sin signo enteras de 8 bits, iguales 0h y 0x0;
+
+aux1 equ 0x0 
 aux2 equ 1h
 aux3 equ 2h
 aux4 equ 3h
@@ -10,14 +10,13 @@ Inicio
 ;1###########################################################
    movlw .7   ;w <-7
    movwf aux1 ;aux1 <-w
-   addlw .3 ;w <- 7+3
+   addlw .3 ;w <- w+3
    movwf aux1 ;aux1 <-10
 ;2#############################################################
    movlw .8 ; w<-8
    movwf aux1 ; aux1 <-w
    movlw .10; w<-10
    movwf aux2; aux2 <-w
-   
    movf aux1,w; w<-aux1
    addwf aux2,w ;w<-w+aux2
    movwf aux3 ; aux3 <-w
@@ -119,7 +118,7 @@ Inicio
   movlw .16 ;w <- 16
   movwf aux3; aux3 <- w
   movf aux1,w; w<-aux1
-  addwf aux2; aux2 <- w+aux1
+  addwf aux2; aux2 <- w+aux2
   movf aux3,w ;w<-aux3
   sublw b'11010' ;w<- 11010-w
   negf WREG; w<- -w

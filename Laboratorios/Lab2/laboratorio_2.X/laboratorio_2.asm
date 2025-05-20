@@ -8,7 +8,7 @@ Inicio
     
 movlw b'11111000'
 movwf TRISD
-setf LAT    D
+setf LATD
     
 Main
     
@@ -24,7 +24,7 @@ movwf LATD
 VERDE
 movlw b'00000010'
 movwf LATD
-AMARILLOt
+AMARILLO
 movlw b'00000011'
 movwf LATD       
 BLANCO
@@ -37,7 +37,7 @@ ROJO
 movlw b'00000001'
 movwf LATD
     
-goto	Main
+goto Main
   
 end
     
