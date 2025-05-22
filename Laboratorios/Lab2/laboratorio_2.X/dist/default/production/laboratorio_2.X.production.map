@@ -1,5 +1,5 @@
 MPLINK 5.08, LINKER
-Linker Map File - Created Thu May 15 14:32:13 2025
+Linker Map File - Created Wed May 21 16:00:59 2025
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -34,31 +34,31 @@ Linker Map File - Created Thu May 15 14:32:13 2025
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                 AMARILLO   0x000016    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                     AZUL   0x00000a    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                   BLANCO   0x00001a    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                     CYAN   0x00000e    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                   Inicio   0x000000    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                  MAGENTA   0x00001e    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                     Main   0x000006    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                    NEGRO   0x000006    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                     ROJO   0x000022    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                    VERDE   0x000012    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                 AMARILLO   0x000016    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                     AZUL   0x00000a    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                   BLANCO   0x00001a    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                     CYAN   0x00000e    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                   Inicio   0x000000    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                  MAGENTA   0x00001e    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                     Main   0x000006    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                    NEGRO   0x000006    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                     ROJO   0x000022    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                    VERDE   0x000012    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
 
 
 
                               Symbols - Sorted by Address
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   Inicio   0x000000    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                     Main   0x000006    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                    NEGRO   0x000006    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                     AZUL   0x00000a    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                     CYAN   0x00000e    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                    VERDE   0x000012    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                 AMARILLO   0x000016    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                   BLANCO   0x00001a    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                  MAGENTA   0x00001e    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
-                     ROJO   0x000022    program     static C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                   Inicio   0x000000    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                     Main   0x000006    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                    NEGRO   0x000006    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                     AZUL   0x00000a    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                     CYAN   0x00000e    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                    VERDE   0x000012    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                 AMARILLO   0x000016    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                   BLANCO   0x00001a    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                  MAGENTA   0x00001e    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
+                     ROJO   0x000022    program     static C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab2\laboratorio_2.X\laboratorio_2.asm
 
 

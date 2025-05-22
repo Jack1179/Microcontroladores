@@ -13,7 +13,7 @@ ORG 8h
   goto ISR; si hay una interrupcion a donde debe ir
 
 Inicio ;RB7 Rojo RB6 Amarillo  RB5 Verde
-  movlw b'00011111' ; habilitar puerto completo
+  movlw b'11110000' ; habilitar puerto completo
   movwf TRISB;x2
   bcf INTCON2,INTEDG0; ; flanco de subida o bajada
   bcf INTCON,INT0IF;
