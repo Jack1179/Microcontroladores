@@ -92,11 +92,11 @@ ${OBJECTDIR}/laboratorio_2.o: laboratorio_2.asm  nbproject/Makefile-${CND_CONF}.
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/laboratorio_2.o.d 
 	@${RM} ${OBJECTDIR}/laboratorio_2.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2.asm\" 
-	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".O ${OBJECTDIR}/laboratorio_2.o
-	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".ERR ${OBJECTDIR}/laboratorio_2.o.err
-	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".LST ${OBJECTDIR}/laboratorio_2.o.lst
-	@${RM}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".HEX 
+	@${FIXDEPS} dummy.d -e "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2.asm\" 
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".O ${OBJECTDIR}/laboratorio_2.o
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".ERR ${OBJECTDIR}/laboratorio_2.o.err
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".LST ${OBJECTDIR}/laboratorio_2.o.lst
+	@${RM}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/laboratorio_2.o"
 	@${FIXDEPS} "${OBJECTDIR}/laboratorio_2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -105,11 +105,11 @@ ${OBJECTDIR}/laboratorio_2.o: laboratorio_2.asm  nbproject/Makefile-${CND_CONF}.
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/laboratorio_2.o.d 
 	@${RM} ${OBJECTDIR}/laboratorio_2.o 
-	@${FIXDEPS} dummy.d -e "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2.asm\" 
-	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".O ${OBJECTDIR}/laboratorio_2.o
-	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".ERR ${OBJECTDIR}/laboratorio_2.o.err
-	@${MV}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".LST ${OBJECTDIR}/laboratorio_2.o.lst
-	@${RM}  "C:/Users/USER/Desktop/Archivos U/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".HEX 
+	@${FIXDEPS} dummy.d -e "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2.asm\" 
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".O ${OBJECTDIR}/laboratorio_2.o
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".ERR ${OBJECTDIR}/laboratorio_2.o.err
+	@${MV}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".LST ${OBJECTDIR}/laboratorio_2.o.lst
+	@${RM}  "C:/Users/Carlos Arturo Tascon/Desktop/Microcontroladores/Microcontroladores/Laboratorios/Lab2/laboratorio_2.X/laboratorio_2".HEX 
 	@${DEP_GEN} -d "${OBJECTDIR}/laboratorio_2.o"
 	@${FIXDEPS} "${OBJECTDIR}/laboratorio_2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
