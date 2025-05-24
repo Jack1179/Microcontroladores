@@ -18,7 +18,7 @@ ORG 18h
 Inicio
     bsf INTCON, GIE	; Habilita interrupciones globales    
     bsf RCON, IPEN      ;habilita esquema de prioridades
-    bsf INTCON, GIEH    ;prioridad alta
+    bsf INTCON, GIEH    ;Prioridad alta
     bsf INTCON, GIEL    ;prioridad baja
 
     ;=== TMR0 configuración ===
@@ -77,7 +77,10 @@ ISRL
     retfie
 
 Reiniciar
-    clrf LATD             ; Reinicia el contador
+    clrf LATD 
+    clrf ColorIndex           ; Reinicia el contador
+    movlw b'00000101' ; RC0=1, RC2=1 (Rojo + Azul)
+    movwf LATC
     bcf INTCON3, INT2IF
     retfie
 
@@ -116,29 +119,25 @@ Cero
     movf ColorIndex, W
     xorlw d'1'
     btfsc STATUS, Z
-    goto MAGENTA
+    goto AZUL
     movf ColorIndex, W
     xorlw d'2'
     btfsc STATUS, Z
-    goto AZUL
+    goto CYAN
     movf ColorIndex, W
     xorlw d'3'
     btfsc STATUS, Z
-    goto CYAN
+    goto VERDE
     movf ColorIndex, W
     xorlw d'4'
     btfsc STATUS, Z
-    goto VERDE
+    goto AMARILLO
     movf ColorIndex, W
     xorlw d'5'
     btfsc STATUS, Z
-    goto AMARILLO
-    movf ColorIndex, W
-    xorlw d'6'
-    btfsc STATUS, Z
     goto BLANCO
-
-    ; Si supera 6, reinicia el índice y vuelve a MAGENTA
+    movf ColorIndex, W
+    ; Si supera 5, reinicia el índice y vuelve a MAGENTA
     clrf ColorIndex
     goto MAGENTA
 

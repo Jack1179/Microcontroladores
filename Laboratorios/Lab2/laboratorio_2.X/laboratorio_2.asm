@@ -16,7 +16,7 @@ NEGRO
 movlw b'00000000'
 movwf LATD
 AZUL
-movlw b'00000100'
+movlw b'10000100'
 movwf LATD       
 CYAN
 movlw b'00000110'

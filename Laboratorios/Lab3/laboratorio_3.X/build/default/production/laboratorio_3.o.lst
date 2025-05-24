@@ -1,4 +1,4 @@
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  1
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -27,17 +27,17 @@ Warning[205]: Found directive in column 1. (CONFIG)
                       00005 CONFIG PBADEN=OFF
                       00006 
 Warning[205]: Found directive in column 1. (cblock)
-                      00007 cblock  0x20      ; Usamos la RAM general a partir de 0x20
+                      00007 cblock  0x20    
   00000020            00008     ColorIndex    ; Solo usamos 1 byte
 Warning[205]: Found directive in column 1. (ENDC)
-                      00009 endc        ; Variable para secuencia de color RGB
+                      00009 endc        ; bariable para secuencia de color RGB
                       00010 
 Warning[205]: Found directive in column 1. (ORG)
 000000                00011 ORG 0h
 000000 EF0E F000      00012     goto Inicio
 Warning[205]: Found directive in column 1. (ORG)
 000008                00013 ORG 8h
-000008 EF44 F000      00014     goto ISRH
+000008 EF47 F000      00014     goto ISRH
 Warning[205]: Found directive in column 1. (ORG)
 000018                00015 ORG 18h
 000018 EF33 F000      00016     goto ISRL
@@ -45,19 +45,19 @@ Warning[205]: Found directive in column 1. (ORG)
 00001C                00018 Inicio
 00001C 8EF2           00019     bsf INTCON, GIE     ; Habilita interrupciones globales    
 00001E 8ED0           00020     bsf RCON, IPEN      ;habilita esquema de prioridades
-000020 8EF2           00021     bsf INTCON, GIEH    ;prioridad alta
+000020 8EF2           00021     bsf INTCON, GIEH    ;Prioridad alta
 000022 8CF2           00022     bsf INTCON, GIEL    ;prioridad baja
                       00023 
                       00024     ;=== TMR0 configuración ===
-000024 0E03           00025     movlw b'00000011'
+000024 0E03           00025     movlw b'00000011' ;escala 1:16
 000026 6ED5           00026     movwf T0CON  
 000028 0E0B           00027     movlw 0x0B
 00002A 6ED7           00028     movwf TMR0H
 00002C 0EDC           00029     movlw 0xDC
-00002E 6ED6           00030     movwf TMR0L  
+00002E 6ED6           00030     movwf TMR0L  ;precarga
 000030 94F2           00031     bcf INTCON, TMR0IF
 000032 8AF2           00032     bsf INTCON, TMR0IE
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  2
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -105,126 +105,125 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000068 EF3A F000      00072     goto Reiniciar
                       00073 
 00006C B4F2           00074     btfsc INTCON, TMR0IF
-00006E EF3D F000      00075     goto LED1HZ
+00006E EF40 F000      00075     goto LED1HZ
                       00076 
 000072 0010           00077     retfie
                       00078 
 000074                00079 Reiniciar
-000074 6A8C           00080     clrf LATD             ; Reinicia el contador
-000076 92F0           00081     bcf INTCON3, INT2IF
-000078 0010           00082     retfie
-                      00083 
-00007A                00084 LED1HZ     ; cambia el led cada 1s
-00007A 94F2           00085     bcf INTCON, TMR0IF
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  3
+000074 6A8C           00080     clrf LATD 
+000076 6A20           00081     clrf ColorIndex           ; Reinicia el contador
+000078 0E05           00082     movlw b'00000101' ; RC0=1, RC2=1 (Rojo + Azul)
+00007A 6E8B           00083     movwf LATC
+00007C 92F0           00084     bcf INTCON3, INT2IF
+00007E 0010           00085     retfie
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-00007C 0E0B           00086     movlw 0x0B
-00007E 6ED7           00087     movwf TMR0H
-000080 0EDC           00088     movlw 0xDC
-000082 6ED6           00089     movwf TMR0L
-000084 7E8A           00090     btg LATB, 7
-000086 0010           00091     retfie
-                      00092 
-                      00093 ; === ISR de alta prioridad: INT0 e INT1 ===
-000088                00094 ISRH
-000088 B2F2           00095     btfsc INTCON, INT0IF
-00008A EF4B F000      00096     goto INC 
-                      00097 
-00008E B0F0           00098     btfsc INTCON3, INT1IF
-000090 EF88 F000      00099     goto STOP
+                      00086 
+000080                00087 LED1HZ     ; cambia el led cada 1s
+000080 94F2           00088     bcf INTCON, TMR0IF
+000082 0E0B           00089     movlw 0x0B
+000084 6ED7           00090     movwf TMR0H
+000086 0EDC           00091     movlw 0xDC
+000088 6ED6           00092     movwf TMR0L
+00008A 7E8A           00093     btg LATB, 7
+00008C 0010           00094     retfie
+                      00095 
+                      00096 ; === ISR de alta prioridad: INT0 e INT1 ===
+00008E                00097 ISRH
+00008E B2F2           00098     btfsc INTCON, INT0IF
+000090 EF4E F000      00099     goto INC 
                       00100 
-000094 0010           00101     retfie
-                      00102 
-                      00103 ; === Incrementa LATD hasta 9, luego reinicia y cambia color en LATC ===
-000096                00104 INC
-000096 92F2           00105     bcf INTCON, INT0IF
-000098 508C           00106     movf LATD, W
-00009A 0A09           00107     xorlw 9
-00009C B4D8           00108     btfsc STATUS, Z
-00009E EF53 F000      00109     goto Cero
-0000A2 2A8C           00110     incf LATD, F
-0000A4 0010           00111     retfie
-                      00112 
-0000A6                00113 Cero
-0000A6 6A8C           00114     clrf LATD
-0000A8 2A20           00115     incf ColorIndex, F
-0000AA 5020           00116     movf ColorIndex, W
-0000AC 0A01           00117     xorlw d'1'
-0000AE B4D8           00118     btfsc STATUS, Z
-0000B0 EF76 F000      00119     goto MAGENTA
-0000B4 5020           00120     movf ColorIndex, W
-0000B6 0A02           00121     xorlw d'2'
-0000B8 B4D8           00122     btfsc STATUS, Z
-0000BA EF79 F000      00123     goto AZUL
-0000BE 5020           00124     movf ColorIndex, W
-0000C0 0A03           00125     xorlw d'3'
-0000C2 B4D8           00126     btfsc STATUS, Z
-0000C4 EF7C F000      00127     goto CYAN
-0000C8 5020           00128     movf ColorIndex, W
-0000CA 0A04           00129     xorlw d'4'
-0000CC B4D8           00130     btfsc STATUS, Z
-0000CE EF7F F000      00131     goto VERDE
-0000D2 5020           00132     movf ColorIndex, W
-0000D4 0A05           00133     xorlw d'5'
-0000D6 B4D8           00134     btfsc STATUS, Z
-0000D8 EF82 F000      00135     goto AMARILLO
-0000DC 5020           00136     movf ColorIndex, W
-0000DE 0A06           00137     xorlw d'6'
-0000E0 B4D8           00138     btfsc STATUS, Z
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  4
+000094 B0F0           00101     btfsc INTCON3, INT1IF
+000096 EF87 F000      00102     goto STOP
+                      00103 
+00009A 0010           00104     retfie
+                      00105 
+                      00106 ; === Incrementa LATD hasta 9, luego reinicia y cambia color en LATC ===
+00009C                00107 INC
+00009C 92F2           00108     bcf INTCON, INT0IF
+00009E 508C           00109     movf LATD, W
+0000A0 0A09           00110     xorlw 9
+0000A2 B4D8           00111     btfsc STATUS, Z
+0000A4 EF56 F000      00112     goto Cero
+0000A8 2A8C           00113     incf LATD, F
+0000AA 0010           00114     retfie
+                      00115 
+0000AC                00116 Cero
+0000AC 6A8C           00117     clrf LATD
+0000AE 2A20           00118     incf ColorIndex, F
+0000B0 5020           00119     movf ColorIndex, W
+0000B2 0A01           00120     xorlw d'1'
+0000B4 B4D8           00121     btfsc STATUS, Z
+0000B6 EF78 F000      00122     goto AZUL
+0000BA 5020           00123     movf ColorIndex, W
+0000BC 0A02           00124     xorlw d'2'
+0000BE B4D8           00125     btfsc STATUS, Z
+0000C0 EF7B F000      00126     goto CYAN
+0000C4 5020           00127     movf ColorIndex, W
+0000C6 0A03           00128     xorlw d'3'
+0000C8 B4D8           00129     btfsc STATUS, Z
+0000CA EF7E F000      00130     goto VERDE
+0000CE 5020           00131     movf ColorIndex, W
+0000D0 0A04           00132     xorlw d'4'
+0000D2 B4D8           00133     btfsc STATUS, Z
+0000D4 EF81 F000      00134     goto AMARILLO
+0000D8 5020           00135     movf ColorIndex, W
+0000DA 0A05           00136     xorlw d'5'
+0000DC B4D8           00137     btfsc STATUS, Z
+0000DE EF84 F000      00138     goto BLANCO
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-0000E2 EF85 F000      00139     goto BLANCO
-                      00140 
-                      00141     ; Si supera 6, reinicia el índice y vuelve a MAGENTA
-0000E6 6A20           00142     clrf ColorIndex
-0000E8 EF76 F000      00143     goto MAGENTA
-                      00144 
-0000EC                00145 MAGENTA
-0000EC 0E05           00146     movlw b'00000101' ; RC0=1, RC2=1 (Rojo + Azul)
-0000EE 6E8B           00147     movwf LATC
-0000F0 0010           00148     retfie
-                      00149 
-0000F2                00150 AZUL
-0000F2 0E04           00151     movlw b'00000100'
-0000F4 6E8B           00152     movwf LATC
-0000F6 0010           00153     retfie
-                      00154 
-0000F8                00155 CYAN
-0000F8 0E06           00156     movlw b'00000110' ; Azul + Verde
-0000FA 6E8B           00157     movwf LATC
-0000FC 0010           00158     retfie
-                      00159 
-0000FE                00160 VERDE
-0000FE 0E02           00161     movlw b'00000010'
-000100 6E8B           00162     movwf LATC
-000102 0010           00163     retfie
-                      00164 
-000104                00165 AMARILLO
-000104 0E03           00166     movlw b'00000011' ; Rojo + Verde
-000106 6E8B           00167     movwf LATC
-000108 0010           00168     retfie
-                      00169 
-00010A                00170 BLANCO
-00010A 0E07           00171     movlw b'00000111' ; R + G + B
-00010C 6E8B           00172     movwf LATC
-00010E 0010           00173     retfie
-                      00174 
-000110                00175 STOP
-000110 0EF9           00176     movlw b'11111001'; bucle infinito
-000112 6E8B           00177     movwf LATC
-000114 EF88 F000      00178     goto STOP  
-                      00179 
+0000E2 5020           00139     movf ColorIndex, W
+                      00140     ; Si supera 5, reinicia el índice y vuelve a MAGENTA
+0000E4 6A20           00141     clrf ColorIndex
+0000E6 EF75 F000      00142     goto MAGENTA
+                      00143 
+0000EA                00144 MAGENTA
+0000EA 0E05           00145     movlw b'00000101' ; RC0=1, RC2=1 (Rojo + Azul)
+0000EC 6E8B           00146     movwf LATC
+0000EE 0010           00147     retfie
+                      00148 
+0000F0                00149 AZUL
+0000F0 0E04           00150     movlw b'00000100'
+0000F2 6E8B           00151     movwf LATC
+0000F4 0010           00152     retfie
+                      00153 
+0000F6                00154 CYAN
+0000F6 0E06           00155     movlw b'00000110' ; Azul + Verde
+0000F8 6E8B           00156     movwf LATC
+0000FA 0010           00157     retfie
+                      00158 
+0000FC                00159 VERDE
+0000FC 0E02           00160     movlw b'00000010'
+0000FE 6E8B           00161     movwf LATC
+000100 0010           00162     retfie
+                      00163 
+000102                00164 AMARILLO
+000102 0E03           00165     movlw b'00000011' ; Rojo + Verde
+000104 6E8B           00166     movwf LATC
+000106 0010           00167     retfie
+                      00168 
+000108                00169 BLANCO
+000108 0E07           00170     movlw b'00000111' ; R + G + B
+00010A 6E8B           00171     movwf LATC
+00010C 0010           00172     retfie
+                      00173 
+00010E                00174 STOP
+00010E 0EF9           00175     movlw b'11111001'; bucle infinito
+000110 6E8B           00176     movwf LATC
+000112 EF87 F000      00177     goto STOP  
+                      00178 
 Warning[205]: Found directive in column 1. (end)
-                      00180 end
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  5
+                      00179 end
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  5
 
 
 SYMBOL TABLE
@@ -265,13 +264,13 @@ ADON                              00000000
 ADRES                             00000FC3
 ADRESH                            00000FC4
 ADRESL                            00000FC3
-AMARILLO                          00000104
+AMARILLO                          00000102
 AN0                               00000000
 AN1                               00000001
 AN2                               00000002
 AN3                               00000003
 AN4                               00000005
-AZUL                              000000F2
+AZUL                              000000F0
 BANKED                            00000001
 BAUDCON                           00000FB8
 BAUDCTL                           00000FB8
@@ -280,10 +279,10 @@ BCLIF                             00000003
 BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
-BLANCO                            0000010A
+BLANCO                            00000108
 BOR                               00000000
 BRG16                             00000003
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  6
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  6
 
 
 SYMBOL TABLE
@@ -342,7 +341,7 @@ CLKCFG1                           00000007
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  7
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  7
 
 
 SYMBOL TABLE
@@ -369,8 +368,8 @@ CVREN                             00000007
 CVROE                             00000006
 CVRR                              00000005
 CVRSS                             00000004
-CYAN                              000000F8
-Cero                              000000A6
+CYAN                              000000F6
+Cero                              000000AC
 ColorIndex                        00000020
 D                                 00000005
 DATA_ADDRESS                      00000005
@@ -401,7 +400,7 @@ EEADR                             00000FA9
 EECON1                            00000FA6
 EECON2                            00000FA7
 EEDATA                            00000FA8
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  8
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  8
 
 
 SYMBOL TABLE
@@ -460,7 +459,7 @@ HLVDIF                            00000002
 HLVDIN                            00000005
 HLVDIP                            00000002
 HLVDL0                            00000000
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE  9
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE  9
 
 
 SYMBOL TABLE
@@ -476,7 +475,7 @@ I2C_STOP                          00000004
 IDLEIE                            00000004
 IDLEIF                            00000004
 IDLEN                             00000007
-INC                               00000096
+INC                               0000009C
 INDF0                             00000FEF
 INDF1                             00000FE7
 INDF2                             00000FDF
@@ -514,12 +513,12 @@ IRCF0                             00000004
 IRCF1                             00000005
 IRCF2                             00000006
 IRVST                             00000005
-ISRH                              00000088
+ISRH                              0000008E
 ISRL                              00000066
 IVRST                             00000005
 Inicio                            0000001C
 LATA                              00000F89
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 10
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 10
 
 
 SYMBOL TABLE
@@ -560,7 +559,7 @@ LATE                              00000F8D
 LATE0                             00000000
 LATE1                             00000001
 LATE2                             00000002
-LED1HZ                            0000007A
+LED1HZ                            00000080
 LVDCON                            00000FD2
 LVDEN                             00000004
 LVDIE                             00000002
@@ -575,10 +574,10 @@ LVV0                              00000000
 LVV1                              00000001
 LVV2                              00000002
 LVV3                              00000003
-MAGENTA                           000000EC
+MAGENTA                           000000EA
 Main                              00000062
 N                                 00000004
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 11
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 11
 
 
 SYMBOL TABLE
@@ -637,7 +636,7 @@ PGM                               00000005
 PIDEE                             00000000
 PIDEF                             00000000
 PIE1                              00000F9D
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 12
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 12
 
 
 SYMBOL TABLE
@@ -696,7 +695,7 @@ RB5                               00000005
 RB6                               00000006
 RB7                               00000007
 RBIE                              00000003
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 13
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 13
 
 
 SYMBOL TABLE
@@ -755,7 +754,7 @@ SCS0                              00000000
 SCS1                              00000001
 SE0                               00000005
 SEN                               00000000
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 14
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 14
 
 
 SYMBOL TABLE
@@ -813,8 +812,8 @@ STKPTR2                           00000002
 STKPTR3                           00000003
 STKPTR4                           00000004
 STKUNF                            00000006
-STOP                              00000110
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 15
+STOP                              0000010E
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 15
 
 
 SYMBOL TABLE
@@ -873,7 +872,7 @@ TMR0ON                            00000007
 TMR1                              00000FCE
 TMR1CS                            00000001
 TMR1H                             00000FCF
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 16
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 16
 
 
 SYMBOL TABLE
@@ -932,7 +931,7 @@ TRISC7                            00000007
 TRISD                             00000F95
 TRISD0                            00000000
 TRISD1                            00000001
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 17
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 17
 
 
 SYMBOL TABLE
@@ -991,7 +990,7 @@ UEP9                              00000F79
 UERRIE                            00000001
 UERRIF                            00000001
 UFRM                              00000F66
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 18
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 18
 
 
 SYMBOL TABLE
@@ -1015,7 +1014,7 @@ UTRDIS                            00000003
 VCFG0                             00000004
 VCFG1                             00000005
 VDIRMAG                           00000007
-VERDE                             000000FE
+VERDE                             000000FC
 VREFM                             00000002
 VREFP                             00000003
 W                                 00000000
@@ -1050,7 +1049,7 @@ _CONFIG3H                         00300005
 _CONFIG4L                         00300006
 _CONFIG5H                         00300009
 _CONFIG5L                         00300008
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 19
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 19
 
 
 SYMBOL TABLE
@@ -1109,7 +1108,7 @@ _ICPRT_ON_4L                      000000FF
 _IDLOC0                           00200000
 _IDLOC1                           00200001
 _IDLOC2                           00200002
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 20
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 20
 
 
 SYMBOL TABLE
@@ -1168,7 +1167,7 @@ _WRT0_OFF_6L                      000000FF
 _WRT0_ON_6L                       000000FE
 _WRT1_OFF_6L                      000000FF
 _WRT1_ON_6L                       000000FD
-MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  7:00:23         PAGE 21
+MPASM 5.67                 LABORATORIO_3.ASM   5-22-2025  15:48:30         PAGE 21
 
 
 SYMBOL TABLE
@@ -1195,13 +1194,13 @@ MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-0100 : XXXXXXXXXXXXXXXX XXXXXXXX-------- ---------------- ----------------
+0100 : XXXXXXXXXXXXXXXX XXXXXX---------- ---------------- ----------------
 0000 : XXXX-XX-XXXXXX-- ---------------- ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Bytes Used:   276
-Program Memory Bytes Free: 32492
+Program Memory Bytes Used:   274
+Program Memory Bytes Free: 32494
 
 
 Errors   :     0
