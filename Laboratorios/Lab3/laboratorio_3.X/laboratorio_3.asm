@@ -6,6 +6,7 @@ CONFIG PBADEN=OFF
 
 cblock  0x20    
     ColorIndex    ; Solo usamos 1 byte
+    First
 endc        ; bariable para secuencia de color RGB
 
 ORG 0h
@@ -32,7 +33,7 @@ Inicio
     bsf INTCON, TMR0IE
     bcf INTCON2, TMR0IP  
 
-    ;=== SALIDAS LATD (bits 0-3 para display 0?9) ===
+    ;=== SALIDAS LATD (bits 0-3 para 7448) ===
     movlw b'11110000'
     movwf TRISD
     clrf LATD
@@ -60,6 +61,9 @@ Inicio
     bcf INTCON3, INT2IF
     bsf INTCON2, INTEDG2
     bcf INTCON3, INT2IP
+    
+    ;===== Primer magenta======
+    clrf First
 
     bsf T0CON, TMR0ON
 
@@ -106,6 +110,9 @@ ISRH
 ; === Incrementa LATD hasta 9, luego reinicia y cambia color en LATC ===
 INC
     bcf INTCON, INT0IF
+    btfss First,0
+    call MAGENTA
+    bsf First,0
     movf LATD, W
     xorlw 9
     btfsc STATUS, Z
