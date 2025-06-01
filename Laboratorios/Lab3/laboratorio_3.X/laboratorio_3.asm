@@ -6,10 +6,7 @@ CONFIG PBADEN=OFF
 
 cblock  0x20    
     ColorIndex    ; Solo usamos 1 byte
-    First
-    aux1
-    aux2
-    aux3
+    First         ; Color negro a magenta
 endc        ; bariable para secuencia de color RGB
 
 ORG 0h
@@ -31,7 +28,7 @@ Inicio
     movlw 0x0B
     movwf TMR0H
     movlw 0xDC
-    movwf TMR0L  ;precarga
+    movwf TMR0L  ;precarga 3036
     bcf INTCON, TMR0IF
     bsf INTCON, TMR0IE
     bcf INTCON2, TMR0IP  
@@ -68,9 +65,9 @@ Inicio
     ;===== Primer magenta======
     clrf First
 
-    bsf T0CON, TMR0ON
+    bsf T0CON, TMR0ON ; activar interrupcion detimer
 
-Main;ciclo infinito
+Main ;ciclo infinito
     goto Main 
 
 ; === ISR de baja prioridad: TMR0, INT2 ===
