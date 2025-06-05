@@ -6,6 +6,7 @@ CONFIG PBADEN=OFF
 
 cblock  0x20    
     ColorIndex    ; Solo usamos 1 byte
+    First         ; Color negro a magenta
 endc        ; bariable para secuencia de color RGB
 
 ORG 0h
@@ -27,26 +28,26 @@ Inicio
     movlw 0x0B
     movwf TMR0H
     movlw 0xDC
-    movwf TMR0L  ;precarga
+    movwf TMR0L  ;precarga 3036
     bcf INTCON, TMR0IF
     bsf INTCON, TMR0IE
     bcf INTCON2, TMR0IP  
 
-    ;=== SALIDAS LATD (bits 0-3 para display 0?9) ===
+    ;=== SALIDAS LATD (bits 0-3 para 7448) ===
     movlw b'11110000'
     movwf TRISD
     clrf LATD
 
     ;=== SALIDAS RGB en LATC (bits 0?2) ===
     movlw b'11111000' ; RC0=R, RC1=G, RC2=B
-    movwf TRISC
-    clrf LATC          ; Color inicial: NEGRO
+    movwf TRISE
+    clrf LATE          ; Color inicial: NEGRO
     clrf ColorIndex    ; Inicia índice de color en 0
 
    ;=== SALIDAS de led 1hz ===
-    movlw b'01111111'
-    movwf TRISB
-    clrf LATB 
+    movlw b'11111011'
+    movwf TRISC
+    clrf LATC 
 
     ;=== INTERRUPCIONES EXTERNAS ===
     bsf INTCON, INT0IE
@@ -60,10 +61,13 @@ Inicio
     bcf INTCON3, INT2IF
     bsf INTCON2, INTEDG2
     bcf INTCON3, INT2IP
+    
+    ;===== Primer magenta======
+    clrf First
 
-    bsf T0CON, TMR0ON
+    bsf T0CON, TMR0ON ; activar interrupcion detimer
 
-Main;ciclo infinito
+Main ;ciclo infinito
     goto Main 
 
 ; === ISR de baja prioridad: TMR0, INT2 ===
@@ -80,7 +84,7 @@ Reiniciar
     clrf LATD 
     clrf ColorIndex           ; Reinicia el contador
     movlw b'00000101' ; RC0=1, RC2=1 (Rojo + Azul)
-    movwf LATC
+    movwf LATE
     bcf INTCON3, INT2IF
     retfie
 
@@ -90,7 +94,7 @@ LED1HZ     ; cambia el led cada 1s
     movwf TMR0H
     movlw 0xDC
     movwf TMR0L
-    btg LATB, 7
+    btg LATC, 2
     retfie
 
 ; === ISR de alta prioridad: INT0 e INT1 ===
@@ -106,6 +110,9 @@ ISRH
 ; === Incrementa LATD hasta 9, luego reinicia y cambia color en LATC ===
 INC
     bcf INTCON, INT0IF
+    btfss First,0
+    call MAGENTA
+    bsf First,0
     movf LATD, W
     xorlw 9
     btfsc STATUS, Z
@@ -143,37 +150,40 @@ Cero
 
 MAGENTA
     movlw b'00000101' ; RC0=1, RC2=1 (Rojo + Azul)
-    movwf LATC
+    movwf LATE
     retfie
 
 AZUL
     movlw b'00000100'
-    movwf LATC
+    movwf LATE
     retfie
 
 CYAN
     movlw b'00000110' ; Azul + Verde
-    movwf LATC
+    movwf LATE
     retfie
 
 VERDE
     movlw b'00000010'
-    movwf LATC
+    movwf LATE
     retfie
 
 AMARILLO
     movlw b'00000011' ; Rojo + Verde
-    movwf LATC
+    movwf LATE
     retfie
 
 BLANCO
     movlw b'00000111' ; R + G + B
-    movwf LATC
+    movwf LATE
     retfie
 
 STOP
     movlw b'11111001'; bucle infinito
-    movwf LATC
+    movwf LATE
     goto STOP  
+    
+
+
 
 end

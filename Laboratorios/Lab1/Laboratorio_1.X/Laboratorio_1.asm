@@ -30,8 +30,8 @@ Inicio
    movwf aux1 ; aux1 <-w
    movlw .4; w<-4
    movwf aux2; aux2 <-w
-   movf aux2,w; w<-aux2
-   subwf aux1,w ;w<- (aux1-w);
+   movf aux1,w; w<-aux1
+   subwf aux2,w ;w<- (aux2-w);
    movwf aux3 ; aux3 <-w
 ;5############################################################
   movlw .5 ;w<-5
@@ -41,7 +41,7 @@ Inicio
   movf PRODL,w ; w<-PRODL
   movwf aux3 ; aux3<-w
 ;6############################################################
-  movlw .12 ;w <- 5
+  movlw .12 ;w <- 12
   movwf aux1;aux1 <-w
   movlw .15
   movwf aux2;aux2 <-w
@@ -57,7 +57,7 @@ Inicio
 ;8############################################################
   movlw b'00001100' ;w <- 12
   movwf aux1 ; aux1 <-w
-  negf aux1; w<- Complemeto a 2 de aux1
+  negf aux1; aux1<- Complemeto a 2 de aux1
 ;9###########################################################
   movlw .35 ;w <- 35
   movwf aux1 ; aux1 <-w
@@ -119,9 +119,8 @@ Inicio
   movwf aux3; aux3 <- w
   movf aux1,w; w<-aux1
   addwf aux2; aux2 <- w+aux2
-  movf aux3,w ;w<-aux3
-  sublw b'11010' ;w<- 11010-w
-  negf WREG; w<- -w
+  movlw b'11010' ;w<-11010
+  subwf aux3,w ;w<-aux3-w
   mullw .3; PRODH_PRODL <- w*3
   movf PRODL,w; w <- RRODL
   subwf aux2,w ;w <- aux2-w
