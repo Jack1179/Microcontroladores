@@ -1,0 +1,291 @@
+[p GLOBOPT AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
+[v ___omul __omul `(ul  1 e 4 0 ]
+"43 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v _main main `(v  1 e 1 0 ]
+"176
+[v _Teclado4x4 Teclado4x4 `(uc  1 e 1 0 ]
+"190
+[v _mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
+"208
+[v _unidad unidad `(v  1 e 1 0 ]
+"212
+[v _color color `(v  1 e 1 0 ]
+"224
+[v _ISR ISR `II(v  1 e 1 0 ]
+"231
+[v _mostrar_valor mostrar_valor `(v  1 e 1 0 ]
+"236
+[v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
+"3 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+"16
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"31
+[v _Lcd_Char Lcd_Char `(v  1 e 1 0 ]
+"46
+[v _Lcd_String Lcd_String `(v  1 e 1 0 ]
+"52
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+"57
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+"62
+[v _Lcd_Shift_Left Lcd_Shift_Left `(v  1 e 1 0 ]
+"66
+[v _Lcd_Shift_Right Lcd_Shift_Right `(v  1 e 1 0 ]
+"2453 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4550.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"3073
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"3185
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"3263
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"3375
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"3625
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3847
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"4001
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"4223
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"8069
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+"8139
+[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
+"9745
+[v _GIE GIE `VEb  1 e 0 @32663 ]
+"9892
+[v _IPEN IPEN `VEb  1 e 0 @32391 ]
+"9982
+[v _LATC2 LATC2 `VEb  1 e 0 @31834 ]
+"9991
+[v _LATD0 LATD0 `VEb  1 e 0 @31840 ]
+"9994
+[v _LATD1 LATD1 `VEb  1 e 0 @31841 ]
+"9997
+[v _LATD2 LATD2 `VEb  1 e 0 @31842 ]
+"10000
+[v _LATD3 LATD3 `VEb  1 e 0 @31843 ]
+"10003
+[v _LATD4 LATD4 `VEb  1 e 0 @31844 ]
+"10006
+[v _LATD5 LATD5 `VEb  1 e 0 @31845 ]
+"10009
+[v _LATD6 LATD6 `VEb  1 e 0 @31846 ]
+"10273
+[v _PEIE PEIE `VEb  1 e 0 @32662 ]
+"10396
+[v _RBPU RBPU `VEb  1 e 0 @32655 ]
+"10816
+[v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
+"10819
+[v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
+"10825
+[v _TMR0ON TMR0ON `VEb  1 e 0 @32431 ]
+"10936
+[v _TRISC2 TRISC2 `VEb  1 e 0 @31906 ]
+"10963
+[v _TRISD6 TRISD6 `VEb  1 e 0 @31918 ]
+"19 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v _estado estado `i  1 e 2 0 ]
+"21
+[v _objetivo objetivo `ui  1 e 2 0 ]
+"22
+[v _contador contador `ui  1 e 2 0 ]
+"23
+[v _input input `ui  1 e 2 0 ]
+"25
+[v _inactividad inactividad `ul  1 e 4 0 ]
+"26
+[v _lcd_backlight lcd_backlight `uc  1 e 1 0 ]
+"28
+[v _teclas teclas `C[4][4]uc  1 e 16 0 ]
+"43
+[v _main main `(v  1 e 1 0 ]
+{
+"79
+[v main@tecla tecla `uc  1 a 1 15 ]
+"173
+} 0
+"231
+[v _mostrar_valor mostrar_valor `(v  1 e 1 0 ]
+{
+"235
+} 0
+"190
+[v _mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
+{
+"199
+[v mostrar_conteo@faltan faltan `i  1 a 2 11 ]
+"206
+} 0
+"208
+[v _unidad unidad `(v  1 e 1 0 ]
+{
+[v unidad@i i `i  1 p 2 5 ]
+"210
+} 0
+"212
+[v _color color `(v  1 e 1 0 ]
+{
+[v color@i i `i  1 p 2 7 ]
+"222
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
+"25
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+"7
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"30
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"236 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
+{
+"245
+[v lcd_animacion_bienvenida@i_152 i `i  1 a 2 11 ]
+"241
+[v lcd_animacion_bienvenida@i i `i  1 a 2 9 ]
+"249
+} 0
+"46 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
+[v _Lcd_String Lcd_String `(v  1 e 1 0 ]
+{
+[v Lcd_String@str str `*.31Cuc  1 p 1 3 ]
+"50
+} 0
+"31
+[v _Lcd_Char Lcd_Char `(v  1 e 1 0 ]
+{
+[v Lcd_Char@data data `uc  1 p 1 wreg ]
+[v Lcd_Char@data data `uc  1 p 1 wreg ]
+[v Lcd_Char@data data `uc  1 p 1 2 ]
+"44
+} 0
+"66
+[v _Lcd_Shift_Right Lcd_Shift_Right `(v  1 e 1 0 ]
+{
+"68
+} 0
+"62
+[v _Lcd_Shift_Left Lcd_Shift_Left `(v  1 e 1 0 ]
+{
+"64
+} 0
+"52
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v Lcd_Set_Cursor@row row `uc  1 p 1 wreg ]
+"53
+[v Lcd_Set_Cursor@pos pos `uc  1 a 1 7 ]
+"52
+[v Lcd_Set_Cursor@row row `uc  1 p 1 wreg ]
+[v Lcd_Set_Cursor@column column `uc  1 p 1 3 ]
+[v Lcd_Set_Cursor@row row `uc  1 p 1 4 ]
+"55
+} 0
+"57
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"60
+} 0
+"176 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v _Teclado4x4 Teclado4x4 `(uc  1 e 1 0 ]
+{
+"180
+[v Teclado4x4@col col `i  1 a 2 4 ]
+"177
+[v Teclado4x4@fila fila `i  1 a 2 2 ]
+"188
+} 0
+"3 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+{
+"14
+} 0
+"16
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v Lcd_Cmd@cmd cmd `uc  1 p 1 wreg ]
+[v Lcd_Cmd@cmd cmd `uc  1 p 1 wreg ]
+[v Lcd_Cmd@cmd cmd `uc  1 p 1 2 ]
+"29
+} 0
+"224 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"230
+} 0
