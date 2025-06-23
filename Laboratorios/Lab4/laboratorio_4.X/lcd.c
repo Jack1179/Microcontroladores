@@ -5,11 +5,11 @@ void Lcd_Init() {
     LATD = 0x00;
 
     __delay_ms(20);
-    Lcd_Cmd(0x02);  // Inicializa en modo 4 bits
-    Lcd_Cmd(0x28);  // LCD de 2 líneas, 5x7 matriz
-    Lcd_Cmd(0x0C);  // Enciende LCD, cursor OFF
-    Lcd_Cmd(0x06);  // Modo entrada, sin desplazamiento
-    Lcd_Cmd(0x01);  // Limpia LCD
+    Lcd_Cmd(0x02);  // 4 bits
+    Lcd_Cmd(0x28);  // 5x7 matrix
+    Lcd_Cmd(0x0C);  // LCD on , cursor OFF
+    Lcd_Cmd(0x06);  // int
+    Lcd_Cmd(0x01);  // clean LCD
     __delay_ms(2);
 }
 

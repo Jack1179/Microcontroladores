@@ -5672,10 +5672,14 @@ unsigned char __t3rd16on(void);
 #pragma config FOSC =INTOSC_EC
 #pragma config WDT=OFF
 
-# 23
-void main(void) {
-TRISD0 = 0;
 
+void main(void) {
+TRISB0 = 0b00011111;
+IDLEN=0
+
+IDLEN=1
+
+asm(" sleep");
 LATD = 0;
 while (1) {
 LATD0 = 1;

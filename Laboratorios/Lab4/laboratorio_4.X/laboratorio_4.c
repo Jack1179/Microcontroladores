@@ -50,7 +50,7 @@ void main(void) {
     // Teclado
     TRISB = 0b11110000; LATB = 0x00;
     RBPU = 0;
-
+    __delay_ms(1000 );
     // LED y display
     TRISC = 0x00; LATC = 0x00;
     TRISE = 0x00; LATE = 0x00;
@@ -78,8 +78,6 @@ void main(void) {
     while (1) {
         char tecla = Teclado4x4();
 
-       
-
         if (tecla == 'D') {
             estado = EST_EMERGENCIA;
             Lcd_Clear();
@@ -94,9 +92,9 @@ void main(void) {
         }
 
         if (tecla != 0) {
-            inactividad = 0; // reset tiempo inactivo
+            inactividad = 0; 
 
-            if (tecla == 'C') { // tecla 16
+            if (tecla == 'C') { 
                 lcd_backlight = !lcd_backlight;
                 LATD6 = lcd_backlight;
             }
@@ -149,13 +147,21 @@ void main(void) {
                             mostrar_conteo();
                         }
                     }  else if (tecla == 'B') {
-                        estado = EST_INGRESO_OBJETIVO;
+                        
+                        estado = EST_COMPLETADO;
                         input = 0;
                         contador = 0;
                         unidad(0);
                         LATE = 0b00000101;
-                        mostrar_valor();
+                        Lcd_Clear();
+                            Lcd_Set_Cursor(1, 1);
+                            Lcd_String("Conteo Completo!");
+                            Lcd_Set_Cursor(2, 1);
+                            Lcd_String("Presione OK");
 
+                    } else if (tecla == '*'){
+                        contador=0;
+                        mostrar_conteo();
                     }
                     break;
 
