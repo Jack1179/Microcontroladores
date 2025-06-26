@@ -1,4 +1,4 @@
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  1
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -30,9 +30,9 @@ Warning[205]: Found directive in column 1. (CONFIG)
 Warning[203]: Found opcode in column 1. (movlw)
 000000 0EF8           00009 movlw b'11111000'
 Warning[203]: Found opcode in column 1. (movwf)
-000002 6E95           00010 movwf TRISD
+000002 6E96           00010 movwf TRISE
 Warning[203]: Found opcode in column 1. (setf)
-000004 688C           00011 setf LATD
+000004 688D           00011 setf LATE
                       00012     
 000006                00013 Main
                       00014     
@@ -40,24 +40,24 @@ Warning[203]: Found opcode in column 1. (setf)
 Warning[203]: Found opcode in column 1. (movlw)
 000006 0E00           00016 movlw b'00000000'
 Warning[203]: Found opcode in column 1. (movwf)
-000008 6E8C           00017 movwf LATD
+000008 6E8D           00017 movwf LATE
 00000A                00018 AZUL
 Warning[203]: Found opcode in column 1. (movlw)
-00000A 0E04           00019 movlw b'00000100'
+00000A 0E84           00019 movlw b'10000100'
 Warning[203]: Found opcode in column 1. (movwf)
-00000C 6E8C           00020 movwf LATD       
+00000C 6E8D           00020 movwf LATE       
 00000E                00021 CYAN
 Warning[203]: Found opcode in column 1. (movlw)
 00000E 0E06           00022 movlw b'00000110'
 Warning[203]: Found opcode in column 1. (movwf)
-000010 6E8C           00023 movwf LATD    
+000010 6E8D           00023 movwf LATE    
 000012                00024 VERDE
 Warning[203]: Found opcode in column 1. (movlw)
 000012 0E02           00025 movlw b'00000010'
 Warning[203]: Found opcode in column 1. (movwf)
-000014 6E8C           00026 movwf LATD
+000014 6E8D           00026 movwf LATE
 000016                00027 AMARILLO
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  2
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -66,29 +66,29 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 Warning[203]: Found opcode in column 1. (movlw)
 000016 0E03           00028 movlw b'00000011'
 Warning[203]: Found opcode in column 1. (movwf)
-000018 6E8C           00029 movwf LATD       
+000018 6E8D           00029 movwf LATE       
 00001A                00030 BLANCO
 Warning[203]: Found opcode in column 1. (movlw)
 00001A 0E07           00031 movlw b'00000111'
 Warning[203]: Found opcode in column 1. (movwf)
-00001C 6E8C           00032 movwf LATD
+00001C 6E8D           00032 movwf LATE
 00001E                00033 MAGENTA
 Warning[203]: Found opcode in column 1. (movlw)
 00001E 0E05           00034 movlw b'00000101'
 Warning[203]: Found opcode in column 1. (movwf)
-000020 6E8C           00035 movwf LATD
+000020 6E8D           00035 movwf LATE
 000022                00036 ROJO
 Warning[203]: Found opcode in column 1. (movlw)
 000022 0E01           00037 movlw b'00000001'
 Warning[203]: Found opcode in column 1. (movwf)
-000024 6E8C           00038 movwf LATD
+000024 6E8D           00038 movwf LATE
                       00039     
 Warning[203]: Found opcode in column 1. (goto)
 000026 EF03 F000      00040 goto Main
                       00041   
 Warning[205]: Found directive in column 1. (end)
                       00042 end
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  3
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  3
 
 
 SYMBOL TABLE
@@ -147,7 +147,7 @@ BGST                              00000005
 BLANCO                            0000001A
 BOR                               00000000
 BRG16                             00000003
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  4
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  4
 
 
 SYMBOL TABLE
@@ -206,7 +206,7 @@ CLKCFG1                           00000007
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  5
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  5
 
 
 SYMBOL TABLE
@@ -265,7 +265,7 @@ EECON2                            00000FA7
 EEDATA                            00000FA8
 EEIE                              00000004
 EEIF                              00000004
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  6
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  6
 
 
 SYMBOL TABLE
@@ -324,7 +324,7 @@ HLVDIP                            00000002
 HLVDL0                            00000000
 HLVDL1                            00000001
 HLVDL2                            00000002
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  7
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  7
 
 
 SYMBOL TABLE
@@ -383,7 +383,7 @@ LATA1                             00000001
 LATA2                             00000002
 LATA3                             00000003
 LATA4                             00000004
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  8
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  8
 
 
 SYMBOL TABLE
@@ -442,7 +442,7 @@ NOT_ADDRESS                       00000005
 NOT_BOR                           00000000
 NOT_DONE                          00000001
 NOT_IPEN                          00000007
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE  9
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE  9
 
 
 SYMBOL TABLE
@@ -501,7 +501,7 @@ PIR1                              00000F9E
 PIR2                              00000FA1
 PKTDIS                            00000004
 PLUSW0                            00000FEB
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 10
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 10
 
 
 SYMBOL TABLE
@@ -560,7 +560,7 @@ RBIP                              00000000
 RBPU                              00000007
 RC0                               00000000
 RC1                               00000001
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 11
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 11
 
 
 SYMBOL TABLE
@@ -619,7 +619,7 @@ SMP                               00000007
 SOFIE                             00000006
 SOFIF                             00000006
 SPBRG                             00000FAF
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 12
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 12
 
 
 SYMBOL TABLE
@@ -678,7 +678,7 @@ SWDTEN                            00000000
 SYNC                              00000004
 T08BIT                            00000006
 T0CKI                             00000004
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 13
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 13
 
 
 SYMBOL TABLE
@@ -737,7 +737,7 @@ TMR1IP                            00000000
 TMR1L                             00000FCE
 TMR1ON                            00000000
 TMR2                              00000FCC
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 14
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 14
 
 
 SYMBOL TABLE
@@ -796,7 +796,7 @@ TRISD4                            00000004
 TRISD5                            00000005
 TRISD6                            00000006
 TRISD7                            00000007
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 15
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 15
 
 
 SYMBOL TABLE
@@ -855,7 +855,7 @@ UIE                               00000F69
 UIR                               00000F68
 UOEMON                            00000006
 UPUEN                             00000004
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 16
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 16
 
 
 SYMBOL TABLE
@@ -914,7 +914,7 @@ _CONFIG7H                         0030000D
 _CONFIG7L                         0030000C
 _CP0_OFF_5L                       000000FF
 _CP0_ON_5L                        000000FE
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 17
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 17
 
 
 SYMBOL TABLE
@@ -973,7 +973,7 @@ _IDLOC5                           00200005
 _IDLOC6                           00200006
 _IDLOC7                           00200007
 _IESO_OFF_1H                      0000007F
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 18
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 18
 
 
 SYMBOL TABLE
@@ -1032,7 +1032,7 @@ _WRT3_OFF_6L                      000000FF
 _WRT3_ON_6L                       000000F7
 _WRTB_OFF_6H                      000000FF
 _WRTB_ON_6H                       000000BF
-MPASM 5.67                 LABORATORIO_2.ASM   5-22-2025  15:15:24         PAGE 19
+MPASM 5.67                 LABORATORIO_2.ASM   6-25-2025  20:39:46         PAGE 19
 
 
 SYMBOL TABLE

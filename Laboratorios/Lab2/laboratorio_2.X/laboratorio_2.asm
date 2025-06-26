@@ -7,35 +7,35 @@ CONFIG LVP=OFF
 Inicio
     
 movlw b'11111000'
-movwf TRISD
-setf LATD
+movwf TRISE
+setf LATE
     
 Main
     
 NEGRO	
 movlw b'00000000'
-movwf LATD
+movwf LATE
 AZUL
 movlw b'10000100'
-movwf LATD       
+movwf LATE       
 CYAN
 movlw b'00000110'
-movwf LATD    
+movwf LATE    
 VERDE
 movlw b'00000010'
-movwf LATD
+movwf LATE
 AMARILLO
 movlw b'00000011'
-movwf LATD       
+movwf LATE       
 BLANCO
 movlw b'00000111'
-movwf LATD
+movwf LATE
 MAGENTA
 movlw b'00000101'
-movwf LATD
+movwf LATE
 ROJO
 movlw b'00000001'
-movwf LATD
+movwf LATE
     
 goto Main
   

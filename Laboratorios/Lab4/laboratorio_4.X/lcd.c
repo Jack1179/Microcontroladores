@@ -1,9 +1,12 @@
 #include "lcd.h"
 
 void Lcd_Init() {
-    TRISD = 0x00;
-    LATD = 0x00;
-
+    TRISD = 0;
+    LATD = 0;
+    TRISA = 0b00000101; 
+    LATA = 0;
+    TRISA5 = 0; // Pin backlight
+    LATA5 = 1;
     __delay_ms(20);
     Lcd_Cmd(0x02);  // 4 bits
     Lcd_Cmd(0x28);  // 5x7 matrix
@@ -65,4 +68,10 @@ void Lcd_Shift_Left(void) {
 
 void Lcd_Shift_Right(void) {
     Lcd_Cmd(0x1C);
+}
+void LCD_CrearCaracter(unsigned char pos, const unsigned char *pattern) {
+    Lcd_Cmd(0x40 + (pos * 8));
+    for (char i = 0; i < 8; i++) {
+        Lcd_Char(pattern[i]);
+    }
 }

@@ -5,8 +5,10 @@
 [d frameptr 4065 ]
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
+[v i2___awdiv __awdiv `(i  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
+[v i2___awmod __awmod `(i  1 e 2 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\ftadd.c
@@ -19,8 +21,10 @@
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+[v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
+[v i2___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 3 0 ]
 "245
@@ -33,52 +37,64 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"43 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+"63 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
 [v _main main `(v  1 e 1 0 ]
-"182
-[v _Teclado4x4 Teclado4x4 `(uc  1 e 1 0 ]
-"196
+"165
+[v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
+"189
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+"266
 [v _mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
-"214
+[v i2_mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
+"284
 [v _unidad unidad `(v  1 e 1 0 ]
-"218
+[v i2_unidad unidad `(v  1 e 1 0 ]
+"288
 [v _color color `(v  1 e 1 0 ]
-"230
-[v _ISR ISR `II(v  1 e 1 0 ]
-"237
+[v i2_color color `(v  1 e 1 0 ]
+"300
 [v _mostrar_valor mostrar_valor `(v  1 e 1 0 ]
-"242
+[v i2_mostrar_valor mostrar_valor `(v  1 e 1 0 ]
+"306
+[v _mostrar_completado mostrar_completado `(v  1 e 1 0 ]
+[v i2_mostrar_completado mostrar_completado `(v  1 e 1 0 ]
+"314
+[v _emergencia emergencia `(v  1 e 1 0 ]
+"326
 [v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
-"3 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
+"3 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
-"16
+"19
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
-"31
+[v i2_Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"34
 [v _Lcd_Char Lcd_Char `(v  1 e 1 0 ]
-"46
+[v i2_Lcd_Char Lcd_Char `(v  1 e 1 0 ]
+"49
 [v _Lcd_String Lcd_String `(v  1 e 1 0 ]
-"52
+[v i2_Lcd_String Lcd_String `(v  1 e 1 0 ]
+"55
 [v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
-"57
+[v i2_Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+"60
 [v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
-"62
-[v _Lcd_Shift_Left Lcd_Shift_Left `(v  1 e 1 0 ]
-"66
-[v _Lcd_Shift_Right Lcd_Shift_Right `(v  1 e 1 0 ]
+[v i2_Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+"72
+[v _LCD_CrearCaracter LCD_CrearCaracter `(v  1 e 1 0 ]
 "2453 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4550.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"2973
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
 "3073
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-"3185
-[v _LATC LATC `VEuc  1 e 1 @3979 ]
 "3263
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 "3375
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
+"3427
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "3625
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
-"3847
-[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "4001
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "4223
@@ -89,203 +105,361 @@
 [v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
 "9745
 [v _GIE GIE `VEb  1 e 0 @32663 ]
-"9892
-[v _IPEN IPEN `VEb  1 e 0 @32391 ]
-"9982
-[v _LATC2 LATC2 `VEb  1 e 0 @31834 ]
-"9991
-[v _LATD0 LATD0 `VEb  1 e 0 @31840 ]
-"9994
-[v _LATD1 LATD1 `VEb  1 e 0 @31841 ]
-"9997
-[v _LATD2 LATD2 `VEb  1 e 0 @31842 ]
-"10000
-[v _LATD3 LATD3 `VEb  1 e 0 @31843 ]
+"9934
+[v _LATA1 LATA1 `VEb  1 e 0 @31817 ]
+"9940
+[v _LATA3 LATA3 `VEb  1 e 0 @31819 ]
+"9943
+[v _LATA4 LATA4 `VEb  1 e 0 @31820 ]
+"9946
+[v _LATA5 LATA5 `VEb  1 e 0 @31821 ]
 "10003
 [v _LATD4 LATD4 `VEb  1 e 0 @31844 ]
 "10006
 [v _LATD5 LATD5 `VEb  1 e 0 @31845 ]
 "10009
 [v _LATD6 LATD6 `VEb  1 e 0 @31846 ]
+"10012
+[v _LATD7 LATD7 `VEb  1 e 0 @31847 ]
 "10273
 [v _PEIE PEIE `VEb  1 e 0 @32662 ]
+"10375
+[v _RB4 RB4 `VEb  1 e 0 @31756 ]
+"10378
+[v _RB5 RB5 `VEb  1 e 0 @31757 ]
+"10381
+[v _RB6 RB6 `VEb  1 e 0 @31758 ]
+"10384
+[v _RB7 RB7 `VEb  1 e 0 @31759 ]
+"10387
+[v _RBIE RBIE `VEb  1 e 0 @32659 ]
+"10390
+[v _RBIF RBIF `VEb  1 e 0 @32656 ]
 "10396
 [v _RBPU RBPU `VEb  1 e 0 @32655 ]
+"10399
+[v _RC0 RC0 `VEb  1 e 0 @31760 ]
 "10816
 [v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
 "10819
 [v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
 "10825
 [v _TMR0ON TMR0ON `VEb  1 e 0 @32431 ]
-"10936
-[v _TRISC2 TRISC2 `VEb  1 e 0 @31906 ]
-"10963
-[v _TRISD6 TRISD6 `VEb  1 e 0 @31918 ]
-"19 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+"10900
+[v _TRISA5 TRISA5 `VEb  1 e 0 @31893 ]
+"10930
+[v _TRISC0 TRISC0 `VEb  1 e 0 @31904 ]
+"19 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
 [v _estado estado `i  1 e 2 0 ]
-"21
+"20
 [v _objetivo objetivo `ui  1 e 2 0 ]
-"22
+"21
 [v _contador contador `ui  1 e 2 0 ]
-"23
+"22
 [v _input input `ui  1 e 2 0 ]
+"23
+[v _Tecla Tecla `VEuc  1 e 1 0 ]
+"24
+[v _btnRC0_ant btnRC0_ant `uc  1 e 1 0 ]
 "25
-[v _inactividad inactividad `ul  1 e 4 0 ]
+[v _inactividad inactividad `ui  1 e 2 0 ]
 "26
 [v _lcd_backlight lcd_backlight `uc  1 e 1 0 ]
 "28
-[v _teclas teclas `C[4][4]uc  1 e 16 0 ]
+[v _mapa_teclas mapa_teclas `C[17]uc  1 e 17 0 ]
+"35
+[v _runner0 runner0 `C[8]uc  1 e 8 0 ]
+"39
+[v _runner1 runner1 `C[8]uc  1 e 8 0 ]
 "43
+[v _runner2 runner2 `C[8]uc  1 e 8 0 ]
+"47
+[v _explosion explosion `C[8]uc  1 e 8 0 ]
+"63
 [v _main main `(v  1 e 1 0 ]
 {
-"79
-[v main@tecla tecla `uc  1 a 1 15 ]
-"179
+"92
+[v main@tecla tecla `uc  1 a 1 3 ]
+"74
+[v main@btnRC0 btnRC0 `uc  1 a 1 2 ]
+"163
 } 0
-"237
+"300
 [v _mostrar_valor mostrar_valor `(v  1 e 1 0 ]
 {
-"241
+"304
 } 0
-"196
+"266
 [v _mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
 {
-"205
-[v mostrar_conteo@faltan faltan `i  1 a 2 11 ]
-"212
+"275
+[v mostrar_conteo@faltan faltan `i  1 a 2 29 ]
+"282
 } 0
-"214
+"284
 [v _unidad unidad `(v  1 e 1 0 ]
 {
-[v unidad@i i `i  1 p 2 5 ]
-"216
+[v unidad@i i `i  1 p 2 23 ]
+"286
 } 0
-"218
+"288
 [v _color color `(v  1 e 1 0 ]
 {
-[v color@i i `i  1 p 2 7 ]
-"228
+[v color@i i `i  1 p 2 25 ]
+"298
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "10
-[v ___lwmod@counter counter `uc  1 a 1 4 ]
+[v ___lwmod@counter counter `uc  1 a 1 22 ]
 "7
-[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
-[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 18 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 20 ]
 "25
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
-[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 23 ]
 "11
-[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+[v ___lwdiv@counter counter `uc  1 a 1 22 ]
 "7
-[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 18 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 20 ]
 "30
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+[v ___awdiv@quotient quotient `i  1 a 2 24 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
+[v ___awdiv@sign sign `uc  1 a 1 23 ]
+[v ___awdiv@counter counter `uc  1 a 1 22 ]
 "7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+[v ___awdiv@dividend dividend `i  1 p 2 18 ]
+[v ___awdiv@divisor divisor `i  1 p 2 20 ]
 "41
 } 0
-"242 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+"306 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v _mostrar_completado mostrar_completado `(v  1 e 1 0 ]
+{
+"312
+} 0
+"326
 [v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
 {
-"251
-[v lcd_animacion_bienvenida@i_154 i `i  1 a 2 11 ]
-"247
-[v lcd_animacion_bienvenida@i i `i  1 a 2 9 ]
-"255
+"338
+[v lcd_animacion_bienvenida@c c `uc  1 a 1 58 ]
+"337
+[v lcd_animacion_bienvenida@j j `i  1 a 2 59 ]
+"355
+[v lcd_animacion_bienvenida@i i `i  1 a 2 56 ]
+"335
+[v lcd_animacion_bienvenida@offset offset `i  1 a 2 61 ]
+"332
+[v lcd_animacion_bienvenida@mensaje mensaje `C[24]uc  1 a 24 28 ]
+"333
+[v lcd_animacion_bienvenida@pasos pasos `Ci  1 a 2 54 ]
+"330
+[v lcd_animacion_bienvenida@F3144 F3144 `C[24]uc  1 s 24 F3144 ]
+"366
 } 0
-"46 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 23 ]
+[v ___awmod@counter counter `uc  1 a 1 22 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 18 ]
+[v ___awmod@divisor divisor `i  1 p 2 20 ]
+"34
+} 0
+"72 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
+[v _LCD_CrearCaracter LCD_CrearCaracter `(v  1 e 1 0 ]
+{
+[v LCD_CrearCaracter@pos pos `uc  1 p 1 wreg ]
+"74
+[v LCD_CrearCaracter@i i `uc  1 a 1 24 ]
+"72
+[v LCD_CrearCaracter@pos pos `uc  1 p 1 wreg ]
+[v LCD_CrearCaracter@pattern pattern `*.31Cuc  1 p 1 21 ]
+[v LCD_CrearCaracter@pos pos `uc  1 p 1 23 ]
+"77
+} 0
+"165 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
+{
+"187
+} 0
+"314
+[v _emergencia emergencia `(v  1 e 1 0 ]
+{
+"324
+} 0
+"49 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
 [v _Lcd_String Lcd_String `(v  1 e 1 0 ]
 {
-[v Lcd_String@str str `*.31Cuc  1 p 1 3 ]
-"50
+[v Lcd_String@str str `*.31Cuc  1 p 1 21 ]
+"53
 } 0
-"31
+"34
 [v _Lcd_Char Lcd_Char `(v  1 e 1 0 ]
 {
 [v Lcd_Char@data data `uc  1 p 1 wreg ]
 [v Lcd_Char@data data `uc  1 p 1 wreg ]
-[v Lcd_Char@data data `uc  1 p 1 2 ]
-"44
+[v Lcd_Char@data data `uc  1 p 1 20 ]
+"47
 } 0
-"66
-[v _Lcd_Shift_Right Lcd_Shift_Right `(v  1 e 1 0 ]
-{
-"68
-} 0
-"62
-[v _Lcd_Shift_Left Lcd_Shift_Left `(v  1 e 1 0 ]
-{
-"64
-} 0
-"52
+"55
 [v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
 {
 [v Lcd_Set_Cursor@row row `uc  1 p 1 wreg ]
-"53
-[v Lcd_Set_Cursor@pos pos `uc  1 a 1 7 ]
-"52
-[v Lcd_Set_Cursor@row row `uc  1 p 1 wreg ]
-[v Lcd_Set_Cursor@column column `uc  1 p 1 3 ]
-[v Lcd_Set_Cursor@row row `uc  1 p 1 4 ]
+"56
+[v Lcd_Set_Cursor@pos pos `uc  1 a 1 23 ]
 "55
+[v Lcd_Set_Cursor@row row `uc  1 p 1 wreg ]
+[v Lcd_Set_Cursor@column column `uc  1 p 1 21 ]
+[v Lcd_Set_Cursor@row row `uc  1 p 1 22 ]
+"58
 } 0
-"57
+"60
 [v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
 {
-"60
+"63
 } 0
-"182 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
-[v _Teclado4x4 Teclado4x4 `(uc  1 e 1 0 ]
-{
-"186
-[v Teclado4x4@col col `i  1 a 2 4 ]
-"183
-[v Teclado4x4@fila fila `i  1 a 2 2 ]
-"194
-} 0
-"3 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
+"3
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
 {
-"14
+"17
 } 0
-"16
+"19
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
 {
 [v Lcd_Cmd@cmd cmd `uc  1 p 1 wreg ]
 [v Lcd_Cmd@cmd cmd `uc  1 p 1 wreg ]
-[v Lcd_Cmd@cmd cmd `uc  1 p 1 2 ]
-"29
+[v Lcd_Cmd@cmd cmd `uc  1 p 1 20 ]
+"32
 } 0
-"230 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
-[v _ISR ISR `II(v  1 e 1 0 ]
+"189 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"236
+"264
+} 0
+"300
+[v i2_mostrar_valor mostrar_valor `(v  1 e 1 0 ]
+{
+"304
+} 0
+"266
+[v i2_mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
+{
+"275
+[v i2mostrar_conteo@faltan faltan `i  1 a 2 11 ]
+"282
+} 0
+"284
+[v i2_unidad unidad `(v  1 e 1 0 ]
+{
+[v i2unidad@i i `i  1 p 2 5 ]
+"286
+} 0
+"288
+[v i2_color color `(v  1 e 1 0 ]
+{
+[v i2color@i i `i  1 p 2 7 ]
+"298
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
+[v i2___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v i2___lwmod@counter counter `uc  1 a 1 4 ]
+"7
+[v i2___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v i2___lwmod@divisor divisor `ui  1 p 2 2 ]
+"25
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+[v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v i2___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"11
+[v i2___lwdiv@counter counter `uc  1 a 1 6 ]
+"7
+[v i2___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v i2___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"30
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
+[v i2___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v i2___awmod@sign sign `uc  1 a 1 5 ]
+[v i2___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v i2___awmod@dividend dividend `i  1 p 2 0 ]
+[v i2___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awdiv.c
+[v i2___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v i2___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v i2___awdiv@sign sign `uc  1 a 1 5 ]
+[v i2___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v i2___awdiv@dividend dividend `i  1 p 2 0 ]
+[v i2___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"306 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+[v i2_mostrar_completado mostrar_completado `(v  1 e 1 0 ]
+{
+"312
+} 0
+"49 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
+[v i2_Lcd_String Lcd_String `(v  1 e 1 0 ]
+{
+[v i2Lcd_String@str str `*.31Cuc  1 p 1 3 ]
+"53
+} 0
+"34
+[v i2_Lcd_Char Lcd_Char `(v  1 e 1 0 ]
+{
+[v i2Lcd_Char@data data `uc  1 p 1 wreg ]
+[v i2Lcd_Char@data data `uc  1 p 1 wreg ]
+[v i2Lcd_Char@data data `uc  1 p 1 2 ]
+"47
+} 0
+"55
+[v i2_Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v i2Lcd_Set_Cursor@row row `uc  1 p 1 wreg ]
+"56
+[v i2Lcd_Set_Cursor@pos pos `uc  1 a 1 7 ]
+"55
+[v i2Lcd_Set_Cursor@row row `uc  1 p 1 wreg ]
+[v i2Lcd_Set_Cursor@column column `uc  1 p 1 3 ]
+[v i2Lcd_Set_Cursor@row row `uc  1 p 1 4 ]
+"58
+} 0
+"60
+[v i2_Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"63
+} 0
+"19
+[v i2_Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v i2Lcd_Cmd@cmd cmd `uc  1 p 1 wreg ]
+[v i2Lcd_Cmd@cmd cmd `uc  1 p 1 wreg ]
+[v i2Lcd_Cmd@cmd cmd `uc  1 p 1 2 ]
+"32
 } 0
