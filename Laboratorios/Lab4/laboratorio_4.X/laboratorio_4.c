@@ -167,12 +167,12 @@ void inicializar_hardware(void) {
     TRISE = 0; LATE = 0;
     TRISA = 0b00000101; 
     TRISB = 0b11110000; LATB = 0x0F;
-    TRISC0 = 1; // RC0 como entrada
+    TRISC0 = 1; 
     RBPU = 0;
     __delay_ms(1000);
 
     T0CON = 0b00000001; // Timer0 con prescaler 1:4
-    TMR0 = 3036;        // 100 ms aprox
+    TMR0 = 3036;        
     TMR0IF = 0;
     TMR0IE = 1;
 
@@ -349,7 +349,7 @@ void lcd_animacion_bienvenida(void) {
     Lcd_Set_Cursor(2, 16);
     Lcd_Char(3);
     Lcd_Set_Cursor(1, 1);
-    Lcd_String("     ¡BOOM!         ");
+    Lcd_String("     ï¿½BOOM!         ");
     __delay_ms(500);
 
     for (int i = 0; i < 3; i++) {
