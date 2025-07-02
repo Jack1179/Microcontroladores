@@ -137,9 +137,6 @@ void main(void) {
 
                 case EST_CONTEO:
                     if (tecla == 'B') {
-                        contador = 0;
-                        unidad(0);
-                        LATE = 0b00000101;
                         estado = EST_COMPLETADO;
                         mostrar_completado();
                     } else if (tecla == 'A') {
@@ -163,12 +160,16 @@ void main(void) {
 }
 
 void inicializar_hardware(void) {
-    TRISD = 0; LATD = 0;
-    TRISE = 0; LATE = 0;
+    TRISD = 0; 
+    LATD = 0;
+    TRISE = 0; 
+    LATE = 0;
     TRISA = 0b00000101; 
-    TRISB = 0b11110000; LATB = 0x0F;
+    TRISB = 0b11110000; 
+    LATB = 0x0F;
     TRISC0 = 1; 
     RBPU = 0;
+    ADCON1 = 0x0F;
     __delay_ms(1000);
 
     T0CON = 0b00000001; // Timer0 con prescaler 1:4
@@ -248,6 +249,8 @@ void __interrupt() ISR(void) {
 
             // Al despertar
             inactividad = 0;
+            color(contador/10);
+            unidad(contador%10);
             TMR0IE = 1;
             lcd_backlight = 1;
             LATA5 = 1;
@@ -349,7 +352,7 @@ void lcd_animacion_bienvenida(void) {
     Lcd_Set_Cursor(2, 16);
     Lcd_Char(3);
     Lcd_Set_Cursor(1, 1);
-    Lcd_String("     ï¿½BOOM!         ");
+    Lcd_String("      ¡BOOM!         ");
     __delay_ms(500);
 
     for (int i = 0; i < 3; i++) {

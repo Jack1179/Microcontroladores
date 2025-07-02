@@ -5883,9 +5883,6 @@ break;
 
 case 2:
 if (tecla == 'B') {
-contador = 0;
-unidad(0);
-LATE = 0b00000101;
 estado = 3;
 mostrar_completado();
 } else if (tecla == 'A') {
@@ -5909,12 +5906,16 @@ _delay((unsigned long)((200)*(1000000/4000.0)));
 }
 
 void inicializar_hardware(void) {
-TRISD = 0; LATD = 0;
-TRISE = 0; LATE = 0;
+TRISD = 0;
+LATD = 0;
+TRISE = 0;
+LATE = 0;
 TRISA = 0b00000101;
-TRISB = 0b11110000; LATB = 0x0F;
+TRISB = 0b11110000;
+LATB = 0x0F;
 TRISC0 = 1;
 RBPU = 0;
+ADCON1 = 0x0F;
 _delay((unsigned long)((1000)*(1000000/4000.0)));
 
 T0CON = 0b00000001;
@@ -5994,6 +5995,8 @@ asm(" sleep");
 
 
 inactividad = 0;
+color(contador/10);
+unidad(contador%10);
 TMR0IE = 1;
 lcd_backlight = 1;
 LATA5 = 1;
@@ -6095,7 +6098,7 @@ Lcd_Char(' ');
 Lcd_Set_Cursor(2, 16);
 Lcd_Char(3);
 Lcd_Set_Cursor(1, 1);
-Lcd_String("     ¡BOOM!         ");
+Lcd_String("      ¡BOOM!         ");
 _delay((unsigned long)((500)*(1000000/4000.0)));
 
 for (int i = 0; i < 3; i++) {
