@@ -7,13 +7,14 @@ void Lcd_Init() {
     LATA = 0;
     TRISA5 = 0; // Pin backlight
     LATA5 = 1;
-    __delay_ms(20);
+    __delay_ms(100);
     Lcd_Cmd(0x02);  // 4 bits
     Lcd_Cmd(0x28);  // 5x7 matrix
     Lcd_Cmd(0x0C);  // LCD on , cursor OFF
     Lcd_Cmd(0x06);  // int
     Lcd_Cmd(0x01);  // clean LCD
-    __delay_ms(2);
+    __delay_ms(100);
+    Lcd_Clear();
 }
 
 void Lcd_Cmd(char cmd) {

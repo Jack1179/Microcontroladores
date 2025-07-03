@@ -5686,13 +5686,14 @@ TRISA = 0b00000101;
 LATA = 0;
 TRISA5 = 0;
 LATA5 = 1;
-_delay((unsigned long)((20)*(1000000/4000.0)));
+_delay((unsigned long)((100)*(1000000/4000.0)));
 Lcd_Cmd(0x02);
 Lcd_Cmd(0x28);
 Lcd_Cmd(0x0C);
 Lcd_Cmd(0x06);
 Lcd_Cmd(0x01);
-_delay((unsigned long)((2)*(1000000/4000.0)));
+_delay((unsigned long)((100)*(1000000/4000.0)));
+Lcd_Clear();
 }
 
 void Lcd_Cmd(char cmd) {
@@ -5759,9 +5760,10 @@ Lcd_Char(pattern[i]);
 # 5 "laboratorio_4.c"
 #pragma config FOSC = INTOSC_EC
 #pragma config WDT = OFF
+#pragma config LVP = OFF
 #pragma config PBADEN = OFF
 
-# 19
+# 20
 int estado = 0;
 unsigned int objetivo = 0;
 unsigned int contador = 0;
@@ -5779,16 +5781,34 @@ const char mapa_teclas[17] = {
 };
 
 const unsigned char runner0[8] = {
-0b00100, 0b00100, 0b01110, 0b00100,
-0b01100, 0b10100, 0b00100, 0b01010
+0b00100,
+0b00100,
+0b01110,
+0b00100,
+0b00100,
+0b00100,
+0b00100,
+0b01010
 };
 const unsigned char runner1[8] = {
-0b00100, 0b00100, 0b01110, 0b00100,
-0b01000, 0b00110, 0b01000, 0b10000
+0b00100,
+0b00100,
+0b01110,
+0b00100,
+0b00100,
+0b00110,
+0b01001,
+0b10000
 };
 const unsigned char runner2[8] = {
-0b00100, 0b00100, 0b01110, 0b00100,
-0b00100, 0b01100, 0b01000, 0b00100
+0b00100,
+0b00100,
+0b01110,
+0b00100,
+0b00100,
+0b01100,
+0b01000,
+0b00100
 };
 const unsigned char explosion[8] = {
 0b00100, 0b10101, 0b01110, 0b11111,
@@ -5807,11 +5827,12 @@ void mostrar_completado(void);
 void inicializar_hardware(void);
 
 void main(void) {
+inicializar_hardware();
 Lcd_Init();
 _delay((unsigned long)((1000)*(1000000/4000.0)));
 lcd_animacion_bienvenida();
 
-inicializar_hardware();
+
 
 estado = 1;
 mostrar_valor();
@@ -5910,13 +5931,15 @@ TRISD = 0;
 LATD = 0;
 TRISE = 0;
 LATE = 0;
+ADCON1 = 0x0F;
 TRISA = 0b00000101;
+RBPU = 0;
+_delay((unsigned long)((1000)*(1000000/4000.0)));
 TRISB = 0b11110000;
 LATB = 0x0F;
 TRISC0 = 1;
-RBPU = 0;
 ADCON1 = 0x0F;
-_delay((unsigned long)((1000)*(1000000/4000.0)));
+
 
 T0CON = 0b00000001;
 TMR0 = 3036;
