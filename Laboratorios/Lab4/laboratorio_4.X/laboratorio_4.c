@@ -63,6 +63,18 @@
         0b01000, 
         0b00100
     };
+    const unsigned char rpg[8] = {
+        0b00000, 
+        0b00000, 
+        0b00110, 
+        0b11111,
+        0b00110, 
+        0b00000, 
+        0b00000, 
+        0b00000
+    };
+    
+    
     const unsigned char explosion[8] = {
         0b00100, 0b10101, 0b01110, 0b11111,
         0b01110, 0b10101, 0b00100, 0b00000
@@ -186,14 +198,13 @@
         LATE = 0;
         ADCON1 = 0x0F;
         TRISA = 0b00000101; 
+        TRISB = 0b11110000; 
+        LATB = 0b00001111;
         RBPU = 0;
         __delay_ms(1000);
-        TRISB = 0b11110000; 
-        LATB = 0x0F;
+        
+        // Interrupcion de tiempo
         TRISC0 = 1; 
-        ADCON1 = 0x0F;
-
-
         T0CON = 0b00000001; // Timer0 con prescaler 1:4
         TMR0 = 3036;        
         TMR0IF = 0;
@@ -202,7 +213,9 @@
         GIE = 1;
         PEIE = 1;
         RBIF = 0;
-        RBIE = 1;
+        RBIE = 1
+                
+                ;
         TMR0ON = 1;
 
 
@@ -252,12 +265,12 @@
             LATA1 ^= 1;
             inactividad++;
 
-            if (inactividad == 10) {
+            if (inactividad == 20) {
                 lcd_backlight = 0;
                 LATA5 = 0;
             }
 
-            if (inactividad >= 20) { 
+            if (inactividad >= 40) { 
                 Lcd_Clear();
                 LATE = 0;
                 LATD = 0;
@@ -353,6 +366,8 @@
         LCD_CrearCaracter(1, runner1);
         LCD_CrearCaracter(2, runner2);
         LCD_CrearCaracter(3, explosion);
+        LCD_CrearCaracter(4, rpg);
+        
 
         const char mensaje[] = "  Contador De Objetos  ";
         const int pasos = 16;
@@ -363,10 +378,14 @@
                 char c = mensaje[offset + j];
                 Lcd_Char((c >= 32 && c <= 126) ? c : ' ');
             }
-
+            Lcd_Set_Cursor(2, offset);
+            Lcd_Char(4);
+            
             Lcd_Set_Cursor(2, offset + 1);
             Lcd_Char(offset % 3);
             __delay_ms(312);
+            Lcd_Set_Cursor(2, offset);
+            Lcd_Char(' ');
             Lcd_Set_Cursor(2, offset + 1);
             Lcd_Char(' ');
         }
@@ -388,4 +407,5 @@
 
         __delay_ms(800);
         Lcd_Clear();
+        inactividad=0;
     } 

@@ -5810,6 +5810,18 @@ const unsigned char runner2[8] = {
 0b01000,
 0b00100
 };
+const unsigned char rpg[8] = {
+0b00000,
+0b00000,
+0b00110,
+0b11111,
+0b00110,
+0b00000,
+0b00000,
+0b00000
+};
+
+
 const unsigned char explosion[8] = {
 0b00100, 0b10101, 0b01110, 0b11111,
 0b01110, 0b10101, 0b00100, 0b00000
@@ -5999,12 +6011,12 @@ TMR0IF = 0;
 LATA1 ^= 1;
 inactividad++;
 
-if (inactividad == 10) {
+if (inactividad == 20) {
 lcd_backlight = 0;
 LATA5 = 0;
 }
 
-if (inactividad >= 20) {
+if (inactividad >= 40) {
 Lcd_Clear();
 LATE = 0;
 LATD = 0;
@@ -6100,6 +6112,8 @@ LCD_CrearCaracter(0, runner0);
 LCD_CrearCaracter(1, runner1);
 LCD_CrearCaracter(2, runner2);
 LCD_CrearCaracter(3, explosion);
+LCD_CrearCaracter(4, rpg);
+
 
 const char mensaje[] = "  Contador De Objetos  ";
 const int pasos = 16;
@@ -6110,10 +6124,14 @@ for (int j = 0; j < 16; j++) {
 char c = mensaje[offset + j];
 Lcd_Char((c >= 32 && c <= 126) ? c : ' ');
 }
+Lcd_Set_Cursor(2, offset);
+Lcd_Char(4);
 
 Lcd_Set_Cursor(2, offset + 1);
 Lcd_Char(offset % 3);
 _delay((unsigned long)((312)*(1000000/4000.0)));
+Lcd_Set_Cursor(2, offset);
+Lcd_Char(' ');
 Lcd_Set_Cursor(2, offset + 1);
 Lcd_Char(' ');
 }

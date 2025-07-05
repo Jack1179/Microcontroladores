@@ -1,4 +1,4 @@
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  1
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Warning[205]: Found directive in column 1. (ORG)
                       00030 
                       00031     ; === DESACTIVAR ENTRADAS ANALÓGICAS ===
 000024 0E0F           00032     movlw   0x0F
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  2
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00083 ; === ISR BAJA PRIORIDAD ===
 00006E                00084 ISRL
 00006E B2F0           00085     btfsc INTCON3, INT2IF
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  3
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -175,7 +175,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0000C0 5020           00136     movf ColorIndex, W
 0000C2 0A01           00137     xorlw d'1'
 0000C4 B4D8           00138     btfsc STATUS, Z
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  4
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -234,7 +234,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00189 
                       00190 ; === BUCLE INFINITO AL DETENER ===
 00011C                00191 STOP
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  5
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  5
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -246,7 +246,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00195 
 Warning[205]: Found directive in column 1. (end)
                       00196 end
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  6
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  6
 
 
 SYMBOL TABLE
@@ -305,7 +305,7 @@ BGST                              00000005
 BLANCO                            00000116
 BOR                               00000000
 BRG16                             00000003
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  7
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  7
 
 
 SYMBOL TABLE
@@ -364,7 +364,7 @@ CLKCFG1                           00000007
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  8
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  8
 
 
 SYMBOL TABLE
@@ -423,7 +423,7 @@ EEADR                             00000FA9
 EECON1                            00000FA6
 EECON2                            00000FA7
 EEDATA                            00000FA8
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE  9
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE  9
 
 
 SYMBOL TABLE
@@ -482,7 +482,7 @@ HLVDIE                            00000002
 HLVDIF                            00000002
 HLVDIN                            00000005
 HLVDIP                            00000002
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 10
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 10
 
 
 SYMBOL TABLE
@@ -541,7 +541,7 @@ ISRH                              00000096
 ISRL                              0000006E
 IVRST                             00000005
 Inicio                            0000001C
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 11
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 11
 
 
 SYMBOL TABLE
@@ -600,7 +600,7 @@ LVV2                              00000002
 LVV3                              00000003
 MAGENTA                           000000F8
 Main                              0000006A
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 12
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 12
 
 
 SYMBOL TABLE
@@ -659,7 +659,7 @@ PGD                               00000007
 PGM                               00000005
 PIDEE                             00000000
 PIDEF                             00000000
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 13
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 13
 
 
 SYMBOL TABLE
@@ -718,7 +718,7 @@ RB4                               00000004
 RB5                               00000005
 RB6                               00000006
 RB7                               00000007
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 14
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 14
 
 
 SYMBOL TABLE
@@ -777,7 +777,7 @@ SCKP                              00000004
 SCS0                              00000000
 SCS1                              00000001
 SE0                               00000005
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 15
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 15
 
 
 SYMBOL TABLE
@@ -836,7 +836,7 @@ STKPTR2                           00000002
 STKPTR3                           00000003
 STKPTR4                           00000004
 STKUNF                            00000006
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 16
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 16
 
 
 SYMBOL TABLE
@@ -895,7 +895,7 @@ TMR0L                             00000FD6
 TMR0ON                            00000007
 TMR1                              00000FCE
 TMR1CS                            00000001
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 17
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 17
 
 
 SYMBOL TABLE
@@ -954,7 +954,7 @@ TRISC6                            00000006
 TRISC7                            00000007
 TRISD                             00000F95
 TRISD0                            00000000
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 18
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 18
 
 
 SYMBOL TABLE
@@ -1013,7 +1013,7 @@ UEP8                              00000F78
 UEP9                              00000F79
 UERRIE                            00000001
 UERRIF                            00000001
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 19
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 19
 
 
 SYMBOL TABLE
@@ -1072,7 +1072,7 @@ _CONFIG2L                         00300002
 _CONFIG3H                         00300005
 _CONFIG4L                         00300006
 _CONFIG5H                         00300009
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 20
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 20
 
 
 SYMBOL TABLE
@@ -1131,7 +1131,7 @@ _ICPRT_OFF_4L                     000000DF
 _ICPRT_ON_4L                      000000FF
 _IDLOC0                           00200000
 _IDLOC1                           00200001
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 21
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 21
 
 
 SYMBOL TABLE
@@ -1190,7 +1190,7 @@ _WDT_ON_2H                        000000FF
 _WRT0_OFF_6L                      000000FF
 _WRT0_ON_6L                       000000FE
 _WRT1_OFF_6L                      000000FF
-MPASM 5.67                 LABORATORIO_3.ASM   7-1-2025  21:35:18         PAGE 22
+MPASM 5.67                 LABORATORIO_3.ASM   7-3-2025  12:11:00         PAGE 22
 
 
 SYMBOL TABLE
