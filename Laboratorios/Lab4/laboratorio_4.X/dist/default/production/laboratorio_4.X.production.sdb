@@ -37,30 +37,30 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"94 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+"68 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
 [v _main main `(v  1 e 1 0 ]
-"194
+"161
 [v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
-"224
+"191
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"303
+"268
 [v _mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
 [v i2_mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
-"321
+"286
 [v _unidad unidad `(v  1 e 1 0 ]
 [v i2_unidad unidad `(v  1 e 1 0 ]
-"325
+"290
 [v _color color `(v  1 e 1 0 ]
 [v i2_color color `(v  1 e 1 0 ]
-"337
+"302
 [v _mostrar_valor mostrar_valor `(v  1 e 1 0 ]
 [v i2_mostrar_valor mostrar_valor `(v  1 e 1 0 ]
-"343
+"308
 [v _mostrar_completado mostrar_completado `(v  1 e 1 0 ]
 [v i2_mostrar_completado mostrar_completado `(v  1 e 1 0 ]
-"351
+"316
 [v _emergencia emergencia `(v  1 e 1 0 ]
-"363
+"328
 [v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
 "3 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
@@ -107,6 +107,10 @@
 [v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
 "9745
 [v _GIE GIE `VEb  1 e 0 @32663 ]
+"9865
+[v _INT2IE INT2IE `VEb  1 e 0 @32644 ]
+"9868
+[v _INT2IF INT2IF `VEb  1 e 0 @32641 ]
 "9934
 [v _LATA1 LATA1 `VEb  1 e 0 @31817 ]
 "9940
@@ -171,46 +175,46 @@
 [v _mapa_teclas mapa_teclas `C[17]uc  1 e 17 0 ]
 "36
 [v _runner0 runner0 `C[8]uc  1 e 8 0 ]
-"46
+"40
 [v _runner1 runner1 `C[8]uc  1 e 8 0 ]
-"56
+"44
 [v _runner2 runner2 `C[8]uc  1 e 8 0 ]
-"66
+"48
 [v _rpg rpg `C[8]uc  1 e 8 0 ]
-"78
+"52
 [v _explosion explosion `C[8]uc  1 e 8 0 ]
-"94
+"68
 [v _main main `(v  1 e 1 0 ]
 {
-"124
+"96
 [v main@tecla tecla `uc  1 a 1 3 ]
-"106
+"78
 [v main@btnRC0 btnRC0 `uc  1 a 1 2 ]
-"192
+"159
 } 0
-"337
+"302
 [v _mostrar_valor mostrar_valor `(v  1 e 1 0 ]
 {
-"341
+"306
 } 0
-"303
+"268
 [v _mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
 {
-"312
+"277
 [v mostrar_conteo@faltan faltan `i  1 a 2 29 ]
-"319
+"284
 } 0
-"321
+"286
 [v _unidad unidad `(v  1 e 1 0 ]
 {
 [v unidad@i i `i  1 p 2 23 ]
-"323
+"288
 } 0
-"325
+"290
 [v _color color `(v  1 e 1 0 ]
 {
 [v color@i i `i  1 p 2 25 ]
-"335
+"300
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -247,29 +251,29 @@
 [v ___awdiv@divisor divisor `i  1 p 2 20 ]
 "41
 } 0
-"343 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+"308 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
 [v _mostrar_completado mostrar_completado `(v  1 e 1 0 ]
 {
-"349
+"314
 } 0
-"363
+"328
 [v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
 {
-"377
+"341
 [v lcd_animacion_bienvenida@c c `uc  1 a 1 58 ]
-"376
+"340
 [v lcd_animacion_bienvenida@j j `i  1 a 2 59 ]
-"398
+"361
 [v lcd_animacion_bienvenida@i i `i  1 a 2 56 ]
-"374
+"338
 [v lcd_animacion_bienvenida@offset offset `i  1 a 2 61 ]
-"371
+"335
 [v lcd_animacion_bienvenida@mensaje mensaje `C[24]uc  1 a 24 28 ]
-"372
+"336
 [v lcd_animacion_bienvenida@pasos pasos `Ci  1 a 2 54 ]
-"368
+"333
 [v lcd_animacion_bienvenida@F3145 F3145 `C[24]uc  1 s 24 F3145 ]
-"409
+"373
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -294,15 +298,15 @@
 [v LCD_CrearCaracter@pos pos `uc  1 p 1 23 ]
 "78
 } 0
-"194 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+"161 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
 [v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
 {
-"222
+"189
 } 0
-"351
+"316
 [v _emergencia emergencia `(v  1 e 1 0 ]
 {
-"361
+"326
 } 0
 "50 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
 [v _Lcd_String Lcd_String `(v  1 e 1 0 ]
@@ -348,34 +352,34 @@
 [v Lcd_Cmd@cmd cmd `uc  1 p 1 20 ]
 "33
 } 0
-"224 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+"191 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"301
+"266
 } 0
-"337
+"302
 [v i2_mostrar_valor mostrar_valor `(v  1 e 1 0 ]
 {
-"341
+"306
 } 0
-"303
+"268
 [v i2_mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
 {
-"312
+"277
 [v i2mostrar_conteo@faltan faltan `i  1 a 2 11 ]
-"319
+"284
 } 0
-"321
+"286
 [v i2_unidad unidad `(v  1 e 1 0 ]
 {
 [v i2unidad@i i `i  1 p 2 5 ]
-"323
+"288
 } 0
-"325
+"290
 [v i2_color color `(v  1 e 1 0 ]
 {
 [v i2color@i i `i  1 p 2 7 ]
-"335
+"300
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
 [v i2___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -423,10 +427,10 @@
 [v i2___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"343 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
+"308 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\laboratorio_4.c
 [v i2_mostrar_completado mostrar_completado `(v  1 e 1 0 ]
 {
-"349
+"314
 } 0
 "50 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab4\laboratorio_4.X\lcd.c
 [v i2_Lcd_String Lcd_String `(v  1 e 1 0 ]
