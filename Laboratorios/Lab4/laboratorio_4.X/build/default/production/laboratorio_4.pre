@@ -5781,24 +5781,54 @@ const char mapa_teclas[17] = {
 };
 
 const unsigned char runner0[8] = {
-0b00100, 0b00100, 0b01110, 0b00100,
-0b00100, 0b00100, 0b00100, 0b01010
+0b00100,
+0b00100,
+0b01110,
+0b00100,
+0b00100,
+0b00100,
+0b00100,
+0b01010
 };
 const unsigned char runner1[8] = {
-0b00100, 0b00100, 0b01110, 0b00100,
-0b00100, 0b00110, 0b01001, 0b10000
+0b00100,
+0b00100,
+0b01110,
+0b00100,
+0b00100,
+0b00110,
+0b01001,
+0b10000
 };
 const unsigned char runner2[8] = {
-0b00100, 0b00100, 0b01110, 0b00100,
-0b00100, 0b01100, 0b01000, 0b00100
+0b00100,
+0b00100,
+0b01110,
+0b00100,
+0b00100,
+0b01100,
+0b01000,
+0b00100
 };
 const unsigned char rpg[8] = {
-0b00000, 0b00000, 0b00110, 0b11111,
-0b00110, 0b00000, 0b00000, 0b00000
+0b00000,
+0b00000,
+0b00110,
+0b11111,
+0b00110,
+0b00000,
+0b00000,
+0b00000
 };
 const unsigned char explosion[8] = {
-0b00100, 0b10101, 0b01110, 0b11111,
-0b01110, 0b10101, 0b00100, 0b00000
+0b00100,
+0b10101,
+0b01110,
+0b11111,
+0b01110,
+0b10101,
+0b00100,
+0b00000
 };
 
 
@@ -5920,6 +5950,7 @@ INT2IF = 0;
 
 _delay((unsigned long)((1000)*(1000000/4000.0)));
 
+
 TRISC0 = 1;
 T0CON = 0b00000001;
 TMR0 = 3036;
@@ -5930,7 +5961,6 @@ GIE = 1;
 PEIE = 1;
 RBIF = 0;
 RBIE = 1;
-
 TMR0ON = 1;
 lcd_backlight = 1;
 }
@@ -5966,7 +5996,7 @@ else if (RB7 == 0) Tecla = 16;
 }
 LATB = 0b11110000;
 }
-_delay((unsigned long)((200)*(1000000/4000.0)));
+_delay((unsigned long)((250)*(1000000/4000.0)));
 RBIF = 0;
 if (inactividad > 10 & inactividad <20) {
 lcd_backlight = 1;
@@ -6079,7 +6109,7 @@ LCD_CrearCaracter(2, runner2);
 LCD_CrearCaracter(3, explosion);
 LCD_CrearCaracter(4, rpg);
 
-const char mensaje[] = "  Contador De Objetos  ";
+const char mensaje[] = "Bienvenido al Contador";
 const int pasos = 16;
 
 for (int offset = 0; offset < pasos; offset++) {

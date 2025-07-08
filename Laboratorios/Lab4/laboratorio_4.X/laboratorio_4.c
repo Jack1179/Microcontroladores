@@ -9,7 +9,7 @@
 
 #define _XTAL_FREQ 1000000
 
-// Estados
+// Estados del programa
 #define EST_BIENVENIDA 0
 #define EST_INGRESO_OBJETIVO 1
 #define EST_CONTEO 2
@@ -17,41 +17,71 @@
 #define EST_EMERGENCIA 4
 
 // Variables globales
-int estado = EST_BIENVENIDA;
-unsigned int objetivo = 0;
-unsigned int contador = 0;
-unsigned int input = 0;
-volatile unsigned char Tecla = 0;
-unsigned char btnRC0_ant = 0;
-unsigned int inactividad = 0;
-unsigned char lcd_backlight = 1;
+int estado = EST_BIENVENIDA;// variable de estado
+unsigned int objetivo = 0;// Valor ingresado
+unsigned int contador = 0;// Variable de contador
+unsigned int input = 0;// Variable de ingreso
+volatile unsigned char Tecla = 0;// tecla de 1 a 16
+unsigned char btnRC0_ant = 0; // bit para evitar rebotes y matener el boton pulsado
+unsigned int inactividad = 0;// contador para la inactividad
+unsigned char lcd_backlight = 1;// señala en que estado esta la luz para poder cambiarla
 
 const char mapa_teclas[17] = {
     0, '1', '4', '7', '*',
        '2', '5', '8', '0',
        '3', '6', '9', '#',
        'A', 'B', 'C', 'D'
-};
+};// mapa de teclas 
 
 const unsigned char runner0[8] = {
-    0b00100, 0b00100, 0b01110, 0b00100,
-    0b00100, 0b00100, 0b00100, 0b01010
+    0b00100, 
+    0b00100, 
+    0b01110, 
+    0b00100,
+    0b00100, 
+    0b00100, 
+    0b00100, 
+    0b01010
 };
 const unsigned char runner1[8] = {
-    0b00100, 0b00100, 0b01110, 0b00100,
-    0b00100, 0b00110, 0b01001, 0b10000
+    0b00100, 
+    0b00100, 
+    0b01110, 
+    0b00100,
+    0b00100, 
+    0b00110, 
+    0b01001, 
+    0b10000
 };
 const unsigned char runner2[8] = {
-    0b00100, 0b00100, 0b01110, 0b00100,
-    0b00100, 0b01100, 0b01000, 0b00100
+    0b00100, 
+    0b00100, 
+    0b01110, 
+    0b00100,
+    0b00100, 
+    0b01100, 
+    0b01000,
+    0b00100
 };
 const unsigned char rpg[8] = {
-    0b00000, 0b00000, 0b00110, 0b11111,
-    0b00110, 0b00000, 0b00000, 0b00000
+    0b00000, 
+    0b00000, 
+    0b00110, 
+    0b11111,
+    0b00110, 
+    0b00000, 
+    0b00000, 
+    0b00000
 };
 const unsigned char explosion[8] = {
-    0b00100, 0b10101, 0b01110, 0b11111,
-    0b01110, 0b10101, 0b00100, 0b00000
+    0b00100, 
+    0b10101, 
+    0b01110, 
+    0b11111,
+    0b01110, 
+    0b10101, 
+    0b00100, 
+    0b00000
 };
 
 // Prototipos
@@ -64,15 +94,15 @@ void mostrar_valor(void);
 void emergencia(void);
 void mostrar_completado(void);
 void inicializar_hardware(void);
-
+// codigo principal
 void main(void) {
-    inicializar_hardware();
-    Lcd_Init();
-    __delay_ms(1000);
-    lcd_animacion_bienvenida();
+    inicializar_hardware();// inicializa los pines
+    Lcd_Init();// inicializa el lcd
+    __delay_ms(1000);// tiempo de proteccion
+    lcd_animacion_bienvenida();// animacion de bienvenida
 
-    estado = EST_INGRESO_OBJETIVO;
-    mostrar_valor();
+    estado = EST_INGRESO_OBJETIVO;// segundo estado
+    mostrar_valor();//
 
     while (1) {
         unsigned char btnRC0 = RC0;
@@ -157,37 +187,37 @@ void main(void) {
         }
     }
 }
-
+// configuracion de pines
 void inicializar_hardware(void) {
-    TRISD = 0; LATD = 0;
-    TRISE = 0; LATE = 0;
-    ADCON1 = 0x0F;
+    TRISD = 0; LATD = 0; //Salidas de 7 segmentos y LCD
+    TRISE = 0; LATE = 0; //Salidas de Led RGB
+    ADCON1 = 0x0F; // Desavtiva funciones analogicas del puerto A
 
-    TRISA = 0b00000101;
-    TRISB = 0b11110000;
-    LATB = 0b00001111;
-    RBPU = 0;
+    TRISA = 0b00000101;// Salidas de E y R LCD y led 1hz
+    TRISB = 0b11110000;// Salidas y entras de teclado matricial
+    LATB = 0b00001111;//Pones de RB3 a RB0 en 1
+    RBPU = 0;// Activa resistencias de pull-up de RB7 a RB4
 
-    INT2IE = 0; // Desactivar interrupción externa INT2 en RB2
-    INT2IF = 0;
+    INT2IE = 0; // Desactiva interrucion externa 2
+    INT2IF = 0;// Pone la flag de interrucion externa 2 en 0
 
-    __delay_ms(1000);
+    __delay_ms(1000); // delay de protecion
 
+ // Configuracion de interuccion de tiempo0 para 
     TRISC0 = 1;
     T0CON = 0b00000001;
     TMR0 = 3036;
     TMR0IF = 0;
     TMR0IE = 1;
-
+// Configuraciones de interrupciones
     GIE = 1;
     PEIE = 1;
     RBIF = 0;
     RBIE = 1;
-
     TMR0ON = 1;
     lcd_backlight = 1;
 }
-
+// interrupcion de teclado y de temporizador de 1hz
 void __interrupt() ISR(void) {
     if (RBIF == 1) {
         if (PORTB != 0b11110000) {
@@ -219,7 +249,7 @@ void __interrupt() ISR(void) {
             }
             LATB = 0b11110000;
         }
-        __delay_ms(200);
+        __delay_ms(250);
         RBIF = 0;
         if (inactividad > 10 & inactividad <20) {
             lcd_backlight = 1;
@@ -233,12 +263,12 @@ void __interrupt() ISR(void) {
         TMR0IF = 0;
         LATA1 ^= 1;
         inactividad++;
-
+// inactividad por 10s apaga la luz
         if (inactividad == 10) {
             lcd_backlight = 0;
             LATA5 = 0;
         }
-
+// inactividad por 20s pone el pic en sleep
         if (inactividad >= 20) {
             Lcd_Clear();
             LATE = 0;
@@ -257,14 +287,14 @@ void __interrupt() ISR(void) {
             TMR0IE = 1;
             lcd_backlight = 1;
             LATA5 = 1;
-
+// imprime el estado que estaba la pantalla
             if (estado == EST_INGRESO_OBJETIVO) mostrar_valor();
             else if (estado == EST_CONTEO) mostrar_conteo();
             else if (estado == EST_COMPLETADO) mostrar_completado();
         }
     }
 }
-
+// muentra el objetivo y el restante en el LCD
 void mostrar_conteo(void) {
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
@@ -282,11 +312,11 @@ void mostrar_conteo(void) {
     unidad(contador % 10);
     color(contador / 10);
 }
-
+//Coloca las unidades en el 7 segmentos
 void unidad(int i) {
     LATD = (LATD & 0xF0) | (i & 0x0F);
 }
-
+// Coloca las decenas en el 7 segmentos
 void color(int i) {
     switch (i) {
         case 0: LATE = 0b00000101; break;
@@ -298,13 +328,13 @@ void color(int i) {
         default: LATE = 0x00; break;
     }
 }
-
+// Muentra pantalla lcd el valor a escribir
 void mostrar_valor(void) {
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
     Lcd_String("Ingrese valor:");
 }
-
+// dibuja en el lcd indicando conteo completo
 void mostrar_completado(void) {
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
@@ -312,7 +342,7 @@ void mostrar_completado(void) {
     Lcd_Set_Cursor(2, 1);
     Lcd_String("Presione OK");
 }
-
+// Pone en estado de emergencia con el boton de parada bibuja mensaje en el lcd y led en rojo
 void emergencia(void) {
     estado = EST_EMERGENCIA;
     Lcd_Clear();
@@ -324,7 +354,7 @@ void emergencia(void) {
     TMR0ON = 0;
     while (1);
 }
-
+// animacion de bienbenida
 void lcd_animacion_bienvenida(void) {
     LCD_CrearCaracter(0, runner0);
     LCD_CrearCaracter(1, runner1);
@@ -332,7 +362,7 @@ void lcd_animacion_bienvenida(void) {
     LCD_CrearCaracter(3, explosion);
     LCD_CrearCaracter(4, rpg);
 
-    const char mensaje[] = "  Contador De Objetos  ";
+    const char mensaje[] = "Bienvenido al Contador";
     const int pasos = 16;
 
     for (int offset = 0; offset < pasos; offset++) {
