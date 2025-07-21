@@ -5858,10 +5858,12 @@ void beep_largo(void);
 
 void main(void) {
 inicializar_hardware();
+inactividad = 0;
 Lcd_Init();
 beep_corto();
 _delay((unsigned long)((1000)*(1000000/4000.0)));
 mensaje_reset();
+inactividad = 0;
 lcd_animacion_bienvenida();
 estado = 1;
 mostrar_valor();
@@ -6048,7 +6050,7 @@ else if (RB7 == 0) Tecla = 16;
 }
 LATB = 0b11110000;
 }
-_delay((unsigned long)((250)*(1000000/4000.0)));
+_delay((unsigned long)((350)*(1000000/4000.0)));
 RBIF = 0;
 if (inactividad > 10 & inactividad <20) {
 lcd_backlight = 1;
@@ -6172,6 +6174,8 @@ Lcd_String("Ingrese valor:");
 }
 
 void mostrar_completado(void) {
+unidad(objetivo%10);
+color(objetivo/10);
 Lcd_Clear();
 Lcd_Set_Cursor(1, 1);
 Lcd_String("Conteo Completo!");

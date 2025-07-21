@@ -2,7 +2,7 @@
 #include "lcd.c"
 #include "lcd.h"
 
-#pragma config FOSC = INTOSC_EC
+#pragma config FOSC = INTOSC_EC 
 #pragma config WDT = OFF
 #pragma config LVP = OFF
 #pragma config PBADEN = OFF
@@ -111,10 +111,12 @@ void beep_largo(void);
 // codigo principal
 void main(void) {
     inicializar_hardware();// inicializa los pines
+    inactividad = 0;
     Lcd_Init();// inicializa el lcd
     beep_corto();
     __delay_ms(1000);// tiempo de proteccion
     mensaje_reset();
+    inactividad = 0;
     lcd_animacion_bienvenida();// animacion de bienvenida
     estado = EST_INGRESO_OBJETIVO;// segundo estado
     mostrar_valor();//
@@ -155,7 +157,7 @@ void main(void) {
             inactividad = 0;
             char tecla = mapa_teclas[Tecla];
             Tecla = 0;
-
+        
             if (tecla == 'D') emergencia();
             if (tecla == 'C') {
                 lcd_backlight = !lcd_backlight;
@@ -301,7 +303,7 @@ void __interrupt() ISR(void) {
             }
             LATB = 0b11110000;
         }
-        __delay_ms(250);
+        __delay_ms(350);
         RBIF = 0;
         if (inactividad > 10 & inactividad <20) {
             lcd_backlight = 1;
@@ -425,6 +427,8 @@ void mostrar_valor(void) {
 }
 // dibuja en el lcd indicando conteo completo
 void mostrar_completado(void) {
+    unidad(objetivo%10);
+    color(objetivo/10);
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
     Lcd_String("Conteo Completo!");
