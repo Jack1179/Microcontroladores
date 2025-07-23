@@ -6,7 +6,7 @@
             <name>Laboratorio_6</name>
             <creation-uuid>894c2347-6116-44b2-99a4-13388443bc19</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>

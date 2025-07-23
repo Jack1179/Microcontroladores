@@ -2,8 +2,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "10930 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4550.h
 [v _TRISC0 `Vb ~T0 @X0 0 e@31904 ]
-"10888
-[v _TRISA1 `Vb ~T0 @X0 0 e@31889 ]
+"10945
+[v _TRISD0 `Vb ~T0 @X0 0 e@31912 ]
 "9976
 [v _LATC0 `Vb ~T0 @X0 0 e@31832 ]
 "9991
@@ -62,8 +62,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRMT `Vb ~T0 @X0 0 e@32097 ]
 "5402
 [v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
-"9934
-[v _LATA1 `Vb ~T0 @X0 0 e@31817 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -3668,9 +3666,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;untrasonido.c: 19: TRISC0=0;
 "19
 [e = _TRISC0 -> -> 0 `i `b ]
-[; ;untrasonido.c: 20: TRISA1=0;
+[; ;untrasonido.c: 20: TRISD0=0;
 "20
-[e = _TRISA1 -> -> 0 `i `b ]
+[e = _TRISD0 -> -> 0 `i `b ]
 [; ;untrasonido.c: 21: LATC0=0;
 "21
 [e = _LATC0 -> -> 0 `i `b ]
@@ -3724,14 +3722,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;untrasonido.c: 37: if(d==0)
 "37
 [e $ ! == -> _d `i -> 0 `i 370  ]
-[; ;untrasonido.c: 38: printf("Falla en el sensor\r\n");
+[; ;untrasonido.c: 38: printf("Falla en el sensor\r");
 "38
 [e ( _printf :s 1C ]
 [e $U 371  ]
 "39
 [e :U 370 ]
 [; ;untrasonido.c: 39: else
-[; ;untrasonido.c: 40: printf("La distancia medida es: %d cm\r\n",d);
+[; ;untrasonido.c: 40: printf("La distancia medida es: %d cm\r",d);
 "40
 [e ( _printf , (. :s 2C -> _d `i ]
 [e :U 371 ]
@@ -3798,203 +3796,200 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;untrasonido.c: 64: Transmitir('\r');
 "64
 [e ( _Transmitir (1 -> -> 13 `ui `uc ]
-[; ;untrasonido.c: 65: Transmitir('\n');
+[; ;untrasonido.c: 65: _delay((unsigned long)((1000)*(1000000/4000.0)));
 "65
-[e ( _Transmitir (1 -> -> 10 `ui `uc ]
-[; ;untrasonido.c: 66: _delay((unsigned long)((1000)*(1000000/4000.0)));
-"66
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"67
+"66
 }
 [e :U 364 ]
 "34
 [e $U 365  ]
 [e :U 366 ]
+[; ;untrasonido.c: 66: }
 [; ;untrasonido.c: 67: }
-[; ;untrasonido.c: 68: }
-"68
+"67
 [e :UE 363 ]
 }
-"69
+"68
 [v _MedirDistancia `(uc ~T0 @X0 1 ef ]
 {
-[; ;untrasonido.c: 69: unsigned char MedirDistancia(void){
+[; ;untrasonido.c: 68: unsigned char MedirDistancia(void){
 [e :U _MedirDistancia ]
 [f ]
-"70
+"69
 [v _aux `uc ~T0 @X0 1 a ]
-[; ;untrasonido.c: 70: unsigned char aux=0;
+[; ;untrasonido.c: 69: unsigned char aux=0;
 [e = _aux -> -> 0 `i `uc ]
-[; ;untrasonido.c: 71: CCP2CON=0b00000100;
-"71
+[; ;untrasonido.c: 70: CCP2CON=0b00000100;
+"70
 [e = _CCP2CON -> -> 4 `i `uc ]
-[; ;untrasonido.c: 72: TMR1=0;
-"72
+[; ;untrasonido.c: 71: TMR1=0;
+"71
 [e = _TMR1 -> -> 0 `i `us ]
-[; ;untrasonido.c: 73: CCP2IF=0;
-"73
+[; ;untrasonido.c: 72: CCP2IF=0;
+"72
 [e = _CCP2IF -> -> 0 `i `b ]
-[; ;untrasonido.c: 74: RC0=1;
-"74
+[; ;untrasonido.c: 73: RC0=1;
+"73
 [e = _RC0 -> -> 1 `i `b ]
-[; ;untrasonido.c: 75: _delay((unsigned long)((10)*(1000000/4000000.0)));
-"75
+[; ;untrasonido.c: 74: _delay((unsigned long)((10)*(1000000/4000000.0)));
+"74
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
-[; ;untrasonido.c: 76: RC0=0;
-"76
+[; ;untrasonido.c: 75: RC0=0;
+"75
 [e = _RC0 -> -> 0 `i `b ]
-[; ;untrasonido.c: 77: etimeout=1;
-"77
+[; ;untrasonido.c: 76: etimeout=1;
+"76
 [e = _etimeout -> -> 1 `i `uc ]
-[; ;untrasonido.c: 78: while(RC1==0 && etimeout==1);
-"78
+[; ;untrasonido.c: 77: while(RC1==0 && etimeout==1);
+"77
 [e $U 379  ]
 [e :U 380 ]
 [e :U 379 ]
 [e $ && == -> _RC1 `i -> 0 `i == -> _etimeout `i -> 1 `i 380  ]
 [e :U 381 ]
-[; ;untrasonido.c: 80: if(etimeout==0){
-"80
+[; ;untrasonido.c: 79: if(etimeout==0){
+"79
 [e $ ! == -> _etimeout `i -> 0 `i 382  ]
 {
-[; ;untrasonido.c: 81: return 0;
-"81
+[; ;untrasonido.c: 80: return 0;
+"80
 [e ) -> -> 0 `i `uc ]
 [e $UE 378  ]
-"82
+"81
 }
 [e :U 382 ]
-[; ;untrasonido.c: 82: }
-[; ;untrasonido.c: 83: TMR1ON=1;
-"83
+[; ;untrasonido.c: 81: }
+[; ;untrasonido.c: 82: TMR1ON=1;
+"82
 [e = _TMR1ON -> -> 1 `i `b ]
-[; ;untrasonido.c: 84: while(CCP2IF==0 && TMR1IF==0);
-"84
+[; ;untrasonido.c: 83: while(CCP2IF==0 && TMR1IF==0);
+"83
 [e $U 383  ]
 [e :U 384 ]
 [e :U 383 ]
 [e $ && == -> _CCP2IF `i -> 0 `i == -> _TMR1IF `i -> 0 `i 384  ]
 [e :U 385 ]
-[; ;untrasonido.c: 85: TMR1ON=0;
-"85
+[; ;untrasonido.c: 84: TMR1ON=0;
+"84
 [e = _TMR1ON -> -> 0 `i `b ]
-[; ;untrasonido.c: 86: if(TMR1IF==1)
-"86
+[; ;untrasonido.c: 85: if(TMR1IF==1)
+"85
 [e $ ! == -> _TMR1IF `i -> 1 `i 386  ]
-[; ;untrasonido.c: 87: aux=255;
-"87
+[; ;untrasonido.c: 86: aux=255;
+"86
 [e = _aux -> -> 255 `i `uc ]
 [e $U 387  ]
-"88
+"87
 [e :U 386 ]
-[; ;untrasonido.c: 88: else{
+[; ;untrasonido.c: 87: else{
 {
-[; ;untrasonido.c: 89: if(CCPR2>=3556)
-"89
+[; ;untrasonido.c: 88: if(CCPR2>=3556)
+"88
 [e $ ! >= -> _CCPR2 `ui -> -> 3556 `i `ui 388  ]
-[; ;untrasonido.c: 90: CCPR2=3556;
-"90
+[; ;untrasonido.c: 89: CCPR2=3556;
+"89
 [e = _CCPR2 -> -> 3556 `i `us ]
 [e :U 388 ]
-[; ;untrasonido.c: 91: aux=CCPR2/(14) ;
-"91
+[; ;untrasonido.c: 90: aux=CCPR2/(14) ;
+"90
 [e = _aux -> / -> _CCPR2 `ui -> -> 14 `i `ui `uc ]
-"92
+"91
 }
 [e :U 387 ]
-[; ;untrasonido.c: 92: }
-[; ;untrasonido.c: 93: return aux;
-"93
+[; ;untrasonido.c: 91: }
+[; ;untrasonido.c: 92: return aux;
+"92
 [e ) _aux ]
 [e $UE 378  ]
-[; ;untrasonido.c: 94: }
-"94
+[; ;untrasonido.c: 93: }
+"93
 [e :UE 378 ]
 }
-"95
+"94
 [v _Transmitir `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;untrasonido.c: 95: void Transmitir(unsigned char BufferT){
+[; ;untrasonido.c: 94: void Transmitir(unsigned char BufferT){
 [e :U _Transmitir ]
 [v _BufferT `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;untrasonido.c: 96: while(TRMT==0);
-"96
+[; ;untrasonido.c: 95: while(TRMT==0);
+"95
 [e $U 390  ]
 [e :U 391 ]
 [e :U 390 ]
 [e $ == -> _TRMT `i -> 0 `i 391  ]
 [e :U 392 ]
-[; ;untrasonido.c: 97: TXREG=BufferT;
-"97
+[; ;untrasonido.c: 96: TXREG=BufferT;
+"96
 [e = _TXREG _BufferT ]
-[; ;untrasonido.c: 98: }
-"98
+[; ;untrasonido.c: 97: }
+"97
 [e :UE 389 ]
 }
-"99
+"98
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;untrasonido.c: 99: void putch(char data){
+[; ;untrasonido.c: 98: void putch(char data){
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;untrasonido.c: 100: while(TRMT==0);
-"100
+[; ;untrasonido.c: 99: while(TRMT==0);
+"99
 [e $U 394  ]
 [e :U 395 ]
 [e :U 394 ]
 [e $ == -> _TRMT `i -> 0 `i 395  ]
 [e :U 396 ]
-[; ;untrasonido.c: 101: TXREG=data;
-"101
+[; ;untrasonido.c: 100: TXREG=data;
+"100
 [e = _TXREG _data ]
-[; ;untrasonido.c: 102: }
-"102
+[; ;untrasonido.c: 101: }
+"101
 [e :UE 393 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
 [v F3124 `(v ~T0 @X0 1 tf ]
-"103
+"102
 [v _ISR `IF3124 ~T0 @X0 1 e ]
 {
-[; ;untrasonido.c: 103: void interrupt ISR(void){
+[; ;untrasonido.c: 102: void interrupt ISR(void){
 [e :U _ISR ]
 [f ]
-[; ;untrasonido.c: 104: TMR0IF=0;
-"104
+[; ;untrasonido.c: 103: TMR0IF=0;
+"103
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;untrasonido.c: 105: TMR0=3036;
-"105
+[; ;untrasonido.c: 104: TMR0=3036;
+"104
 [e = _TMR0 -> -> 3036 `i `us ]
-[; ;untrasonido.c: 106: LATA1=LATA1^1;
+[; ;untrasonido.c: 105: LATD0=LATD0^1;
+"105
+[e = _LATD0 -> ^ -> _LATD0 `i -> 1 `i `b ]
+[; ;untrasonido.c: 106: if(etimeout==1)
 "106
-[e = _LATA1 -> ^ -> _LATA1 `i -> 1 `i `b ]
-[; ;untrasonido.c: 107: if(etimeout==1)
-"107
 [e $ ! == -> _etimeout `i -> 1 `i 398  ]
-[; ;untrasonido.c: 108: ctimeout++;
-"108
+[; ;untrasonido.c: 107: ctimeout++;
+"107
 [e ++ _ctimeout -> -> 1 `i `uc ]
 [e $U 399  ]
-"109
+"108
 [e :U 398 ]
-[; ;untrasonido.c: 109: else
-[; ;untrasonido.c: 110: ctimeout=0;
-"110
+[; ;untrasonido.c: 108: else
+[; ;untrasonido.c: 109: ctimeout=0;
+"109
 [e = _ctimeout -> -> 0 `i `uc ]
 [e :U 399 ]
-[; ;untrasonido.c: 111: if(ctimeout>=2)
-"111
+[; ;untrasonido.c: 110: if(ctimeout>=2)
+"110
 [e $ ! >= -> _ctimeout `i -> 2 `i 400  ]
-[; ;untrasonido.c: 112: etimeout=0;
-"112
+[; ;untrasonido.c: 111: etimeout=0;
+"111
 [e = _etimeout -> -> 0 `i `uc ]
 [e :U 400 ]
-[; ;untrasonido.c: 113: }
-"113
+[; ;untrasonido.c: 112: }
+"112
 [e :UE 397 ]
 }
 [p f _printf 8388736 ]
-[a 1C 70 97 108 108 97 32 101 110 32 101 108 32 115 101 110 115 111 114 13 10 0 ]
-[a 2C 76 97 32 100 105 115 116 97 110 99 105 97 32 109 101 100 105 100 97 32 101 115 58 32 37 100 32 99 109 13 10 0 ]
+[a 1C 70 97 108 108 97 32 101 110 32 101 108 32 115 101 110 115 111 114 13 0 ]
+[a 2C 76 97 32 100 105 115 116 97 110 99 105 97 32 109 101 100 105 100 97 32 101 115 58 32 37 100 32 99 109 13 0 ]

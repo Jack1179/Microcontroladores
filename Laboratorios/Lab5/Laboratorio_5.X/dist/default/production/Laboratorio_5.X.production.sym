@@ -581,7 +581,7 @@ cstackCOMRAM 1 36 COMRAM 1 1
 cstackBANK0 60 81 BANK0 60 1
 %locals
 dist/default/production\Laboratorio_5.X.production.obj
-C:\Users\CARLOS~1\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.as
+C:\Users\USER\AppData\Local\Temp\xcAsn6s.\driver_tmp_1.as
 1127 142A 0 CODE 0
 1129 142A 0 CODE 0
 1132 142A 0 CODE 0
@@ -1002,7 +1002,7 @@ lcd.c
 31 B4E 0 CODE 0
 32 B6A 0 CODE 0
 33 B76 0 CODE 0
-C:\Users\CARLOS~1\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.as
+C:\Users\USER\AppData\Local\Temp\xcAsn6s.\driver_tmp_1.as
 6481 8 0 CODE 0
 Laboratorio_5.c
 274 8 0 CODE 0

@@ -41,7 +41,7 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"112 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"112 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _main main `(v  1 e 1 0 ]
 "224
 [v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
@@ -81,7 +81,7 @@
 [v _beep_corto beep_corto `(v  1 e 1 0 ]
 "548
 [v _beep_largo beep_largo `(v  1 e 1 0 ]
-"3 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
+"3 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
 "20
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
@@ -214,7 +214,7 @@
 [v _TXIE TXIE `VEb  1 e 0 @31980 ]
 "11047
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
-"21 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"21 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _estado estado `i  1 e 2 0 ]
 "22
 [v _objetivo objetivo `ui  1 e 2 0 ]
@@ -282,7 +282,7 @@
 [v ___awdiv@divisor divisor `i  1 p 2 20 ]
 "41
 } 0
-"429 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"429 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _mostrar_completado mostrar_completado `(v  1 e 1 0 ]
 {
 "437
@@ -321,7 +321,7 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 20 ]
 "30
 } 0
-"527 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"527 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _mensaje_reset mensaje_reset `(v  1 e 1 0 ]
 {
 "540
@@ -356,7 +356,7 @@
 [v ___awmod@divisor divisor `i  1 p 2 20 ]
 "34
 } 0
-"73 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
+"73 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
 [v _LCD_CrearCaracter LCD_CrearCaracter `(v  1 e 1 0 ]
 {
 [v LCD_CrearCaracter@pos pos `uc  1 p 1 wreg ]
@@ -368,7 +368,7 @@
 [v LCD_CrearCaracter@pos pos `uc  1 p 1 25 ]
 "78
 } 0
-"224 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"224 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
 {
 "272
@@ -378,7 +378,7 @@
 {
 "450
 } 0
-"50 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
+"50 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
 [v _Lcd_String Lcd_String `(v  1 e 1 0 ]
 {
 [v Lcd_String@str str `*.32Cuc  1 p 2 21 ]
@@ -404,7 +404,7 @@
 [v Lcd_Set_Cursor@row row `uc  1 p 1 22 ]
 "59
 } 0
-"548 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"548 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _beep_largo beep_largo `(v  1 e 1 0 ]
 {
 "552
@@ -414,7 +414,7 @@
 {
 "546
 } 0
-"3 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
+"3 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
 {
 "18
@@ -432,7 +432,7 @@
 [v Lcd_Cmd@cmd cmd `uc  1 p 1 20 ]
 "33
 } 0
-"274 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"274 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
 "387
@@ -473,7 +473,7 @@
 [v i2___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"429 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"429 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v i2_mostrar_completado mostrar_completado `(v  1 e 1 0 ]
 {
 "437
@@ -512,12 +512,12 @@
 [v i2___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"439 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"439 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v i2_emergencia emergencia `(v  1 e 1 0 ]
 {
 "450
 } 0
-"50 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
+"50 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\lcd.c
 [v i2_Lcd_String Lcd_String `(v  1 e 1 0 ]
 {
 [v i2Lcd_String@str str `*.32Cuc  1 p 2 3 ]
@@ -556,7 +556,7 @@
 [v i2Lcd_Cmd@cmd cmd `uc  1 p 1 2 ]
 "33
 } 0
-"512 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"512 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _Transmitir_Numero Transmitir_Numero `(v  1 e 1 0 ]
 {
 [v Transmitir_Numero@valor valor `uc  1 p 1 wreg ]
@@ -594,7 +594,7 @@
 [v ___lbdiv@dividend dividend `uc  1 p 1 1 ]
 "26
 } 0
-"506 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
+"506 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab5\Laboratorio_5.X\Laboratorio_5.c
 [v _Transmitir_Cadena Transmitir_Cadena `(v  1 e 1 0 ]
 {
 [v Transmitir_Cadena@cadena cadena `*.32Cuc  1 p 2 1 ]

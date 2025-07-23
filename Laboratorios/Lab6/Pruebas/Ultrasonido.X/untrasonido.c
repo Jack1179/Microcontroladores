@@ -17,7 +17,7 @@ void main(void){
   //OSCCON=0b01110000;  //oscilador interno se ajusta a 8 MHz
   //__delay_ms(1);      //Se espera que se estabilice el oscilador interno
   TRISC0=0;           //Se ajusta el pin de Trigger como salida
-  TRISA1=0;           //Se ajusta una salida para un led de prueba
+  TRISD0=0;           //Se ajusta una salida para un led de prueba
   LATC0=0;            //Se ajustan los valores inciales de las salidas
   LATD0=0;
   TXSTA=0b00100100;   //Se configura la transmisión serial RS232
@@ -35,9 +35,9 @@ void main(void){
     while(1){
       d=MedirDistancia();   //Se realiza la medición de distancia
       if(d==0)              //Si la medida es 0 es por error del sensor
-        printf("Falla en el sensor\r\n");
+        printf("Falla en el sensor\r");
       else                  //Si no hay error se transmite la distancia
-        printf("La distancia medida es: %d cm\r\n",d);
+        printf("La distancia medida es: %d cm\r",d);
       __delay_ms(1000);     //Se repite el proceso cada segundo
     }
     //t=0;                //Iniciamos medición de tiempo en 0
@@ -62,7 +62,6 @@ void main(void){
     Transmitir((d%100)/10 + 48);
     Transmitir(d%10 + 48);
     Transmitir('\r');
-    Transmitir('\n');
     __delay_ms(1000);    
   }  
 }
@@ -103,7 +102,7 @@ void putch(char data){
 void interrupt ISR(void){
   TMR0IF=0;
   TMR0=3036;
-  LATA1=LATA1^1;
+  LATD0=LATD0^1;
   if(etimeout==1)   //Se cuenta cada segundo si esta habilitada la condición
     ctimeout++;     // de antibloqueo
   else

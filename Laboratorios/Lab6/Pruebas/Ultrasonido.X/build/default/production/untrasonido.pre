@@ -5748,7 +5748,7 @@ unsigned char d;
 
 
 TRISC0=0;
-TRISA1=0;
+TRISD0=0;
 LATC0=0;
 LATD0=0;
 TXSTA=0b00100100;
@@ -5766,9 +5766,9 @@ while(1){
 while(1){
 d=MedirDistancia();
 if(d==0)
-printf("Falla en el sensor\r\n");
+printf("Falla en el sensor\r");
 else
-printf("La distancia medida es: %d cm\r\n",d);
+printf("La distancia medida es: %d cm\r",d);
 _delay((unsigned long)((1000)*(1000000/4000.0)));
 }
 
@@ -5789,7 +5789,6 @@ Transmitir(d/100 + 48);
 Transmitir((d%100)/10 + 48);
 Transmitir(d%10 + 48);
 Transmitir('\r');
-Transmitir('\n');
 _delay((unsigned long)((1000)*(1000000/4000.0)));
 }
 }
@@ -5830,7 +5829,7 @@ TXREG=data;
 void interrupt ISR(void){
 TMR0IF=0;
 TMR0=3036;
-LATA1=LATA1^1;
+LATD0=LATD0^1;
 if(etimeout==1)
 ctimeout++;
 else

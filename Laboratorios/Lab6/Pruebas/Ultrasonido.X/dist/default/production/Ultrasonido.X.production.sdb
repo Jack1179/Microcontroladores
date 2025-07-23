@@ -35,15 +35,15 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"14 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
+"14 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
 [v _main main `(v  1 e 1 0 ]
-"69
+"68
 [v _MedirDistancia MedirDistancia `(uc  1 e 1 0 ]
-"95
+"94
 [v _Transmitir Transmitir `(v  1 e 1 0 ]
-"99
+"98
 [v _putch putch `(v  1 e 1 0 ]
-"103
+"102
 [v _ISR ISR `II(v  1 e 1 0 ]
 "4936 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4550.h
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
@@ -71,8 +71,6 @@
 [v _CCP2IF CCP2IF `VEb  1 e 0 @32008 ]
 "9745
 [v _GIE GIE `VEb  1 e 0 @32663 ]
-"9934
-[v _LATA1 LATA1 `VEb  1 e 0 @31817 ]
 "9976
 [v _LATC0 LATC0 `VEb  1 e 0 @31832 ]
 "9991
@@ -91,15 +89,15 @@
 [v _TMR1IF TMR1IF `VEb  1 e 0 @31984 ]
 "10840
 [v _TMR1ON TMR1ON `VEb  1 e 0 @32360 ]
-"10888
-[v _TRISA1 TRISA1 `VEb  1 e 0 @31889 ]
 "10930
 [v _TRISC0 TRISC0 `VEb  1 e 0 @31904 ]
+"10945
+[v _TRISD0 TRISD0 `VEb  1 e 0 @31912 ]
 "10978
 [v _TRMT TRMT `VEb  1 e 0 @32097 ]
 "358 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\doprnt.c
 [v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
-"13 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
+"13 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
 [v _etimeout etimeout `uc  1 e 1 0 ]
 [v _ctimeout ctimeout `uc  1 e 1 0 ]
 "14
@@ -107,7 +105,7 @@
 {
 "16
 [v main@d d `uc  1 a 1 24 ]
-"68
+"67
 } 0
 "477 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -126,13 +124,13 @@
 [v printf@f f `*.31Cuc  1 p 1 12 ]
 "1567
 } 0
-"99 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
+"98 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 p 1 wreg ]
 [v putch@data data `uc  1 p 1 wreg ]
 [v putch@data data `uc  1 p 1 0 ]
-"102
+"101
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -174,20 +172,20 @@
 [v ___lbdiv@dividend dividend `uc  1 p 1 5 ]
 "26
 } 0
-"95 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
+"94 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
 [v _Transmitir Transmitir `(v  1 e 1 0 ]
 {
 [v Transmitir@BufferT BufferT `uc  1 p 1 wreg ]
 [v Transmitir@BufferT BufferT `uc  1 p 1 wreg ]
 [v Transmitir@BufferT BufferT `uc  1 p 1 0 ]
-"98
+"97
 } 0
-"69
+"68
 [v _MedirDistancia MedirDistancia `(uc  1 e 1 0 ]
 {
-"70
+"69
 [v MedirDistancia@aux aux `uc  1 a 1 7 ]
-"94
+"93
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -201,8 +199,8 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"103 C:\Users\Carlos Arturo Tascon\Desktop\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
+"102 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Pruebas\Ultrasonido.X\untrasonido.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"113
+"112
 } 0
