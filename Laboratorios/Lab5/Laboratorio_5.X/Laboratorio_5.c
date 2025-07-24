@@ -200,7 +200,7 @@ void main(void) {
                 case EST_CONTEO:
                     if (tecla == 'B') {
                         estado = EST_COMPLETADO;
-                        mostrar_completado();
+                         mostrar_valor();
                     } else if (tecla == 'A') {
                         contador = 0;
                         mostrar_conteo();

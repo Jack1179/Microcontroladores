@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "lcd.c"
 #include "lcd.h"
+#include "EEPROM_Libreria.c"
 
 #pragma config FOSC = INTOSC_EC 
 #pragma config WDT = OFF
@@ -37,6 +38,11 @@ unsigned int vle = 0;
 unsigned int EMOTOR = 0;
 #define BUZZER LATA2
 unsigned char distancia =0;
+unsigned int saved_contador = 0;
+unsigned int saved_objetivo = 0;
+unsigned int POR2 = 0;
+#define EEPROM_ADDR_CONTADOR 10
+#define EEPROM_ADDR_OBJETIVO 15
 
 const char mapa_teclas[17] = {
     0, '1', '4', '7', '*',
@@ -114,37 +120,10 @@ unsigned char ConversionADC(unsigned char canal);
 void mensaje_reset(void);
 void beep_corto(void);
 void beep_largo(void);
-unsigned char MedirDistancia(void);  // Prototipo añadido para el sensor ultrasónico
+unsigned char MedirDistancia(void);
+void RestaurarOC (void);
 
-// Función para medir distancia con sensor ultrasónico
-unsigned char MedirDistancia(void) {
-    unsigned char aux = 0;
-    CCP2CON = 0b00000100;  // Modo captura flanco de bajada
-    TMR1 = 0;              // Reset Timer1
-    CCP2IF = 0;            // Limpiar bandera
-    TRIGGER = 1;           // Generar pulso
-    __delay_us(10);
-    TRIGGER = 0;
-    
-    etimeout = 1;          // Habilitar timeout
-    while(ECHO == 0 && etimeout == 1);  // Esperar inicio de eco
-    if(etimeout == 0) return 0;        // Timeout
-    
-    TMR1ON = 1;            // Iniciar medición
-    while(!CCP2IF && !TMR1IF);  // Esperar flanco de bajada
-    TMR1ON = 0;            // Detener timer
-    
-    if(TMR1IF) {           // Overflow
-        TMR1IF = 0;
-        aux = 255;
-    } else {
-        // Convertir tiempo a distancia (ajustar según necesidad)
-        aux = CCPR2 / 14.5;  // 58 ticks ? 1 cm
-    }
-    return aux;
-}
 
-// codigo principal
 void main(void) {
     inicializar_hardware();  // inicializa los pines
     inactividad = 0;
@@ -154,8 +133,11 @@ void main(void) {
     mensaje_reset();
     inactividad = 0;
     lcd_animacion_bienvenida();  // animacion de bienvenida
+    if(POR2 == 1){
+        RestaurarOC();
+    }else{
     estado = EST_INGRESO_OBJETIVO;  // segundo estado
-    mostrar_valor();
+    mostrar_valor();}
 
     while (1) {
         // Detección por sensor ultrasónico en lugar de botón físico
@@ -164,17 +146,20 @@ void main(void) {
         if(distancia > 0 && distancia < 8) {
             if(estado == EST_CONTEO) {
                 inactividad=0;
-                if(contador < 59) contador++;
-                if(contador % 10 == 0) beep_corto();
-                
+                if(contador < 59) {contador++;
+                    EEPROM_Guardar(EEPROM_ADDR_CONTADOR, contador);
+                }
+                if(contador % 10 == 0) beep_corto();   
                 if(contador >= objetivo) {
+                    EEPROM_Guardar(EEPROM_ADDR_OBJETIVO, objetivo);
+                    EEPROM_Guardar(EEPROM_ADDR_CONTADOR, contador);
                     mostrar_conteo();
                     estado = EST_COMPLETADO;
                     mostrar_completado();
                 } else {
                     mostrar_conteo();
                 }
-                __delay_ms(1000);  // Anti-rebote
+                __delay_ms(2000);  // Anti-rebote
             }
         }
         
@@ -218,6 +203,8 @@ void main(void) {
                         if (input >= 1 && input <= 59) {
                             objetivo = input;
                             contador = 0;
+                            EEPROM_Guardar(EEPROM_ADDR_OBJETIVO, objetivo);
+                            EEPROM_Guardar(EEPROM_ADDR_CONTADOR, contador);
                             input = 0;
                             estado = EST_CONTEO;
                             mostrar_conteo();
@@ -238,6 +225,7 @@ void main(void) {
                         mostrar_completado();
                     } else if (tecla == 'A') {
                         contador = 0;
+                        EEPROM_Guardar(EEPROM_ADDR_CONTADOR, contador);
                         mostrar_conteo();
                     }
                     break;
@@ -625,11 +613,16 @@ void mensaje_reset(void) {
         Lcd_Set_Cursor(1, 1);
         Lcd_String("Falla de energia");
         POR = 1;
-        __delay_ms(1500);
-    } else {
+        POR2 =1;
+        __delay_ms(1500); 
+    }
+    
+     else {
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
         Lcd_String("Reset de usuario");
+        POR = 1;
+        POR2 =0;
         __delay_ms(1500);
     }   
 }
@@ -644,4 +637,83 @@ void beep_largo(void) {
     BUZZER = 1;
     __delay_ms(500);
     BUZZER = 0;
+}
+unsigned char MedirDistancia(void) {
+    unsigned char aux = 0;
+    CCP2CON = 0b00000100;  // Modo captura flanco de bajada
+    TMR1 = 0;              // Reset Timer1
+    CCP2IF = 0;            // Limpiar bandera
+    TRIGGER = 1;           // Generar pulso
+    __delay_us(10);
+    TRIGGER = 0;
+    
+    etimeout = 1;          // Habilitar timeout
+    while(ECHO == 0 && etimeout == 1);  // Esperar inicio de eco
+    if(etimeout == 0) return 0;        // Timeout
+    
+    TMR1ON = 1;            // Iniciar medición
+    while(!CCP2IF && !TMR1IF);  // Esperar flanco de bajada
+    TMR1ON = 0;            // Detener timer
+    
+    if(TMR1IF) {           // Overflow
+        TMR1IF = 0;
+        aux = 255;
+    } else {
+        // Convertir tiempo a distancia (ajustar según necesidad)
+        aux = CCPR2 / 14.5;  // 58 ticks ? 1 cm
+    }
+    return aux;
+}
+void RestaurarOC (void){
+
+    // Preguntar al usuario si desea restaurar
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_String("Restaurar conteo?");
+    Lcd_Set_Cursor(2,1);
+    Lcd_String("OK:Si  Borr:No");
+    
+    char tecla_restore = 0;
+    while (tecla_restore == 0) {
+        inactividad=0;
+        if (Tecla != 0) {
+            char t = mapa_teclas[Tecla];
+            Tecla = 0;
+            if (t == '#') tecla_restore = '#';
+            else if (t == '*') tecla_restore = '*';
+        }
+    }
+    
+    if (tecla_restore == '#') {
+        saved_contador = EEPROM_Lectura(EEPROM_ADDR_CONTADOR);
+        saved_objetivo = EEPROM_Lectura(EEPROM_ADDR_OBJETIVO);
+        Transmitir_Numero(saved_contador);
+        Transmitir_Cadena("\r\n");
+        Transmitir_Numero(saved_objetivo);
+        Transmitir_Cadena("\r\n");
+        Lcd_Clear();
+        contador = saved_contador;
+        objetivo = saved_objetivo;
+        // Determinar estado actual
+        if (objetivo == 0){ mostrar_valor();
+        estado = EST_INGRESO_OBJETIVO;
+         
+        }
+        else if (contador >= objetivo){ mostrar_completado();
+            estado = EST_COMPLETADO;
+        
+        }
+        else{ mostrar_conteo();
+        
+        estado = EST_CONTEO;
+        
+        
+        }
+    } else {
+        mostrar_valor();
+        contador = 0;
+        objetivo = 0;
+        estado = EST_INGRESO_OBJETIVO;
+        
+    }
 }

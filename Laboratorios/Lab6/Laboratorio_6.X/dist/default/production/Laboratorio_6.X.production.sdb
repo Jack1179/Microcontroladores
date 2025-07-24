@@ -23,8 +23,10 @@
 [v ___fttol __fttol `(l  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbdiv.c
 [v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+[v i2___lbdiv __lbdiv `(uc  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbmod.c
 [v ___lbmod __lbmod `(uc  1 e 1 0 ]
+[v i2___lbmod __lbmod `(uc  1 e 1 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 [v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -45,48 +47,57 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"120 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
-[v _MedirDistancia MedirDistancia `(uc  1 e 1 0 ]
-"148
+"3 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\EEPROM_Libreria.c
+[v _EEPROM_Guardar EEPROM_Guardar `(v  1 e 1 0 ]
+"19
+[v _EEPROM_Lectura EEPROM_Lectura `(uc  1 e 1 0 ]
+"127 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
 [v _main main `(v  1 e 1 0 ]
-"260
+"248
 [v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
-"325
+"313
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"475
+"463
 [v _mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
 [v i2_mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
-"494
+"482
 [v _unidad unidad `(v  1 e 1 0 ]
 [v i2_unidad unidad `(v  1 e 1 0 ]
-"499
+"487
 [v _color color `(v  1 e 1 0 ]
 [v i2_color color `(v  1 e 1 0 ]
-"512
+"500
 [v _mostrar_valor mostrar_valor `(v  1 e 1 0 ]
 [v i2_mostrar_valor mostrar_valor `(v  1 e 1 0 ]
-"519
+"507
 [v _mostrar_completado mostrar_completado `(v  1 e 1 0 ]
 [v i2_mostrar_completado mostrar_completado `(v  1 e 1 0 ]
-"530
+"518
 [v _emergencia emergencia `(v  1 e 1 0 ]
 [v i2_emergencia emergencia `(v  1 e 1 0 ]
-"544
+"532
 [v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
-"595
+"583
 [v _Transmitir Transmitir `(v  1 e 1 0 ]
-"600
+[v i2_Transmitir Transmitir `(v  1 e 1 0 ]
+"588
 [v _Transmitir_Cadena Transmitir_Cadena `(v  1 e 1 0 ]
-"607
+[v i2_Transmitir_Cadena Transmitir_Cadena `(v  1 e 1 0 ]
+"595
 [v _Transmitir_Numero Transmitir_Numero `(v  1 e 1 0 ]
-"613
+[v i2_Transmitir_Numero Transmitir_Numero `(v  1 e 1 0 ]
+"601
 [v _ConversionADC ConversionADC `(uc  1 e 1 0 ]
-"622
+"610
 [v _mensaje_reset mensaje_reset `(v  1 e 1 0 ]
-"637
+"630
 [v _beep_corto beep_corto `(v  1 e 1 0 ]
-"643
+"636
 [v _beep_largo beep_largo `(v  1 e 1 0 ]
+"641
+[v _MedirDistancia MedirDistancia `(uc  1 e 1 0 ]
+"667
+[v _RestaurarOC RestaurarOC `(v  1 e 1 0 ]
 "3 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\lcd.c
 [v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
 "20
@@ -124,6 +135,12 @@
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "4223
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"4915
+[v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
+"4922
+[v _EEDATA EEDATA `VEuc  1 e 1 @4008 ]
+"4929
+[v _EEADR EEADR `VEuc  1 e 1 @4009 ]
 "4936
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 "5146
@@ -168,8 +185,14 @@
 [v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
 "9097
 [v _CCP2IF CCP2IF `VEb  1 e 0 @32008 ]
+"9121
+[v _CFGS CFGS `VEb  1 e 0 @32054 ]
 "9205
 [v _CREN CREN `VEb  1 e 0 @32092 ]
+"9316
+[v _EEIF EEIF `VEb  1 e 0 @32012 ]
+"9322
+[v _EEPGD EEPGD `VEb  1 e 0 @32055 ]
 "9745
 [v _GIE GIE `VEb  1 e 0 @32663 ]
 "9757
@@ -226,6 +249,8 @@
 [v _RCIE RCIE `VEb  1 e 0 @31981 ]
 "10447
 [v _RCIF RCIF `VEb  1 e 0 @31989 ]
+"10456
+[v _RD RD `VEb  1 e 0 @32048 ]
 "10816
 [v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
 "10819
@@ -250,63 +275,149 @@
 [v _TXIE TXIE `VEb  1 e 0 @31980 ]
 "11047
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
-"23 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+"11140
+[v _WR WR `VEb  1 e 0 @32049 ]
+"11146
+[v _WREN WREN `VEb  1 e 0 @32050 ]
+"24 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
 [v _etimeout etimeout `uc  1 e 1 0 ]
 [v _ctimeout ctimeout `uc  1 e 1 0 ]
-"26
-[v _estado estado `i  1 e 2 0 ]
 "27
-[v _objetivo objetivo `ui  1 e 2 0 ]
+[v _estado estado `i  1 e 2 0 ]
 "28
-[v _contador contador `ui  1 e 2 0 ]
+[v _objetivo objetivo `ui  1 e 2 0 ]
 "29
-[v _input input `ui  1 e 2 0 ]
+[v _contador contador `ui  1 e 2 0 ]
 "30
+[v _input input `ui  1 e 2 0 ]
+"31
 [v _Tecla Tecla `VEuc  1 e 1 0 ]
-"32
-[v _inactividad inactividad `ui  1 e 2 0 ]
 "33
-[v _lcd_backlight lcd_backlight `uc  1 e 1 0 ]
+[v _inactividad inactividad `ui  1 e 2 0 ]
 "34
-[v _BufferR BufferR `uc  1 e 1 0 ]
+[v _lcd_backlight lcd_backlight `uc  1 e 1 0 ]
 "35
-[v _VADC VADC `ui  1 e 2 0 ]
+[v _BufferR BufferR `uc  1 e 1 0 ]
 "36
-[v _vle vle `ui  1 e 2 0 ]
+[v _VADC VADC `ui  1 e 2 0 ]
 "37
+[v _vle vle `ui  1 e 2 0 ]
+"38
 [v _EMOTOR EMOTOR `ui  1 e 2 0 ]
-"39
+"40
 [v _distancia distancia `uc  1 e 1 0 ]
 "41
+[v _saved_contador saved_contador `ui  1 e 2 0 ]
+"42
+[v _saved_objetivo saved_objetivo `ui  1 e 2 0 ]
+"43
+[v _POR2 POR2 `ui  1 e 2 0 ]
+"47
 [v _mapa_teclas mapa_teclas `C[17]uc  1 e 17 0 ]
-"48
+"54
 [v _runner0 runner0 `C[8]uc  1 e 8 0 ]
-"58
+"64
 [v _runner1 runner1 `C[8]uc  1 e 8 0 ]
-"68
+"74
 [v _runner2 runner2 `C[8]uc  1 e 8 0 ]
-"78
+"84
 [v _rpg rpg `C[8]uc  1 e 8 0 ]
-"88
+"94
 [v _explosion explosion `C[8]uc  1 e 8 0 ]
-"148
+"127
 [v _main main `(v  1 e 1 0 ]
 {
-"193
-[v main@tecla tecla `uc  1 a 1 34 ]
-"257
+"178
+[v main@tecla tecla `uc  1 a 1 36 ]
+"245
 } 0
-"512
+"610
+[v _mensaje_reset mensaje_reset `(v  1 e 1 0 ]
+{
+"628
+} 0
+"532
+[v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
+{
+"545
+[v lcd_animacion_bienvenida@c c `uc  1 a 1 29 ]
+"544
+[v lcd_animacion_bienvenida@j j `i  1 a 2 30 ]
+"565
+[v lcd_animacion_bienvenida@i i `i  1 a 2 27 ]
+"542
+[v lcd_animacion_bienvenida@offset offset `i  1 a 2 32 ]
+"539
+[v lcd_animacion_bienvenida@mensaje mensaje `C[23]uc  1 a 23 0 ]
+"540
+[v lcd_animacion_bienvenida@pasos pasos `Ci  1 a 2 25 ]
+"537
+[v lcd_animacion_bienvenida@F3181 F3181 `C[23]uc  1 s 23 F3181 ]
+"577
+} 0
+"73 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\lcd.c
+[v _LCD_CrearCaracter LCD_CrearCaracter `(v  1 e 1 0 ]
+{
+[v LCD_CrearCaracter@pos pos `uc  1 p 1 wreg ]
+"75
+[v LCD_CrearCaracter@i i `uc  1 a 1 29 ]
+"73
+[v LCD_CrearCaracter@pos pos `uc  1 p 1 wreg ]
+[v LCD_CrearCaracter@pattern pattern `*.32Cuc  1 p 2 24 ]
+[v LCD_CrearCaracter@pos pos `uc  1 p 1 28 ]
+"78
+} 0
+"248 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+[v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
+{
+"310
+} 0
+"518
+[v _emergencia emergencia `(v  1 e 1 0 ]
+{
+"529
+} 0
+"636
+[v _beep_largo beep_largo `(v  1 e 1 0 ]
+{
+"640
+} 0
+"630
+[v _beep_corto beep_corto `(v  1 e 1 0 ]
+{
+"634
+} 0
+"667
+[v _RestaurarOC RestaurarOC `(v  1 e 1 0 ]
+{
+"680
+[v RestaurarOC@t t `uc  1 a 1 35 ]
+"676
+[v RestaurarOC@tecla_restore tecla_restore `uc  1 a 1 36 ]
+"719
+} 0
+"500
 [v _mostrar_valor mostrar_valor `(v  1 e 1 0 ]
 {
-"516
+"504
 } 0
-"475
+"463
 [v _mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
 {
-"484
+"472
 [v mostrar_conteo@faltan faltan `i  1 a 2 32 ]
-"491
+"479
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 26 ]
+[v ___awmod@counter counter `uc  1 a 1 25 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 21 ]
+[v ___awmod@divisor divisor `i  1 p 2 23 ]
+"34
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -321,22 +432,22 @@
 [v ___awdiv@divisor divisor `i  1 p 2 23 ]
 "41
 } 0
-"519 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+"507 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
 [v _mostrar_completado mostrar_completado `(v  1 e 1 0 ]
 {
-"527
+"515
 } 0
-"494
+"482
 [v _unidad unidad `(v  1 e 1 0 ]
 {
 [v unidad@i i `i  1 p 2 26 ]
-"496
+"484
 } 0
-"499
+"487
 [v _color color `(v  1 e 1 0 ]
 {
 [v color@i i `i  1 p 2 28 ]
-"509
+"497
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -359,63 +470,6 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 21 ]
 [v ___lwdiv@divisor divisor `ui  1 p 2 23 ]
 "30
-} 0
-"622 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
-[v _mensaje_reset mensaje_reset `(v  1 e 1 0 ]
-{
-"635
-} 0
-"544
-[v _lcd_animacion_bienvenida lcd_animacion_bienvenida `(v  1 e 1 0 ]
-{
-"557
-[v lcd_animacion_bienvenida@c c `uc  1 a 1 29 ]
-"556
-[v lcd_animacion_bienvenida@j j `i  1 a 2 30 ]
-"577
-[v lcd_animacion_bienvenida@i i `i  1 a 2 27 ]
-"554
-[v lcd_animacion_bienvenida@offset offset `i  1 a 2 32 ]
-"551
-[v lcd_animacion_bienvenida@mensaje mensaje `C[23]uc  1 a 23 0 ]
-"552
-[v lcd_animacion_bienvenida@pasos pasos `Ci  1 a 2 25 ]
-"549
-[v lcd_animacion_bienvenida@F3174 F3174 `C[23]uc  1 s 23 F3174 ]
-"589
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 26 ]
-[v ___awmod@counter counter `uc  1 a 1 25 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 21 ]
-[v ___awmod@divisor divisor `i  1 p 2 23 ]
-"34
-} 0
-"73 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\lcd.c
-[v _LCD_CrearCaracter LCD_CrearCaracter `(v  1 e 1 0 ]
-{
-[v LCD_CrearCaracter@pos pos `uc  1 p 1 wreg ]
-"75
-[v LCD_CrearCaracter@i i `uc  1 a 1 29 ]
-"73
-[v LCD_CrearCaracter@pos pos `uc  1 p 1 wreg ]
-[v LCD_CrearCaracter@pattern pattern `*.32Cuc  1 p 2 24 ]
-[v LCD_CrearCaracter@pos pos `uc  1 p 1 28 ]
-"78
-} 0
-"260 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
-[v _inicializar_hardware inicializar_hardware `(v  1 e 1 0 ]
-{
-"322
-} 0
-"530
-[v _emergencia emergencia `(v  1 e 1 0 ]
-{
-"541
 } 0
 "50 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\lcd.c
 [v _Lcd_String Lcd_String `(v  1 e 1 0 ]
@@ -443,22 +497,70 @@
 [v Lcd_Set_Cursor@row row `uc  1 p 1 25 ]
 "59
 } 0
-"643 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
-[v _beep_largo beep_largo `(v  1 e 1 0 ]
+"595 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+[v _Transmitir_Numero Transmitir_Numero `(v  1 e 1 0 ]
 {
-"647
+[v Transmitir_Numero@valor valor `uc  1 p 1 wreg ]
+[v Transmitir_Numero@valor valor `uc  1 p 1 wreg ]
+[v Transmitir_Numero@valor valor `uc  1 p 1 29 ]
+"599
 } 0
-"637
-[v _beep_corto beep_corto `(v  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
 {
-"641
+[v ___lbmod@dividend dividend `uc  1 p 1 wreg ]
+"6
+[v ___lbmod@rem rem `uc  1 a 1 28 ]
+"7
+[v ___lbmod@counter counter `uc  1 a 1 27 ]
+"4
+[v ___lbmod@dividend dividend `uc  1 p 1 wreg ]
+[v ___lbmod@divisor divisor `uc  1 p 1 25 ]
+"9
+[v ___lbmod@dividend dividend `uc  1 p 1 26 ]
+"18
 } 0
-"120
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+{
+[v ___lbdiv@dividend dividend `uc  1 p 1 wreg ]
+"6
+[v ___lbdiv@quotient quotient `uc  1 a 1 24 ]
+"7
+[v ___lbdiv@counter counter `uc  1 a 1 23 ]
+"4
+[v ___lbdiv@dividend dividend `uc  1 p 1 wreg ]
+[v ___lbdiv@divisor divisor `uc  1 p 1 21 ]
+"9
+[v ___lbdiv@dividend dividend `uc  1 p 1 22 ]
+"26
+} 0
+"588 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+[v _Transmitir_Cadena Transmitir_Cadena `(v  1 e 1 0 ]
+{
+[v Transmitir_Cadena@cadena cadena `*.32Cuc  1 p 2 22 ]
+"593
+} 0
+"583
+[v _Transmitir Transmitir `(v  1 e 1 0 ]
+{
+[v Transmitir@BufferT BufferT `uc  1 p 1 wreg ]
+[v Transmitir@BufferT BufferT `uc  1 p 1 wreg ]
+[v Transmitir@BufferT BufferT `uc  1 p 1 21 ]
+"586
+} 0
+"19 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\EEPROM_Libreria.c
+[v _EEPROM_Lectura EEPROM_Lectura `(uc  1 e 1 0 ]
+{
+[v EEPROM_Lectura@dir dir `i  1 p 2 21 ]
+"25
+} 0
+"641 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
 [v _MedirDistancia MedirDistancia `(uc  1 e 1 0 ]
 {
-"121
+"642
 [v MedirDistancia@aux aux `uc  1 a 1 47 ]
-"145
+"666
 } 0
 "28 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]
@@ -518,22 +620,29 @@
 [v Lcd_Cmd@cmd cmd `uc  1 p 1 23 ]
 "33
 } 0
-"325 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+"3 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\EEPROM_Libreria.c
+[v _EEPROM_Guardar EEPROM_Guardar `(v  1 e 1 0 ]
+{
+[v EEPROM_Guardar@dir dir `i  1 p 2 21 ]
+[v EEPROM_Guardar@data data `uc  1 p 1 23 ]
+"17
+} 0
+"313 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"472
+"460
 } 0
-"512
+"500
 [v i2_mostrar_valor mostrar_valor `(v  1 e 1 0 ]
 {
-"516
+"504
 } 0
-"475
+"463
 [v i2_mostrar_conteo mostrar_conteo `(v  1 e 1 0 ]
 {
-"484
+"472
 [v i2mostrar_conteo@faltan faltan `i  1 a 2 11 ]
-"491
+"479
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\awmod.c
 [v i2___awmod __awmod `(i  1 e 2 0 ]
@@ -559,22 +668,22 @@
 [v i2___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"519 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+"507 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
 [v i2_mostrar_completado mostrar_completado `(v  1 e 1 0 ]
 {
-"527
+"515
 } 0
-"494
+"482
 [v i2_unidad unidad `(v  1 e 1 0 ]
 {
 [v i2unidad@i i `i  1 p 2 5 ]
-"496
+"484
 } 0
-"499
+"487
 [v i2_color color `(v  1 e 1 0 ]
 {
 [v i2color@i i `i  1 p 2 7 ]
-"509
+"497
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwmod.c
 [v i2___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -598,10 +707,10 @@
 [v i2___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"530 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+"518 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
 [v i2_emergencia emergencia `(v  1 e 1 0 ]
 {
-"541
+"529
 } 0
 "50 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\lcd.c
 [v i2_Lcd_String Lcd_String `(v  1 e 1 0 ]
@@ -642,63 +751,63 @@
 [v i2Lcd_Cmd@cmd cmd `uc  1 p 1 2 ]
 "33
 } 0
-"607 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
-[v _Transmitir_Numero Transmitir_Numero `(v  1 e 1 0 ]
+"595 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+[v i2_Transmitir_Numero Transmitir_Numero `(v  1 e 1 0 ]
 {
-[v Transmitir_Numero@valor valor `uc  1 p 1 wreg ]
-[v Transmitir_Numero@valor valor `uc  1 p 1 wreg ]
-[v Transmitir_Numero@valor valor `uc  1 p 1 8 ]
-"611
+[v i2Transmitir_Numero@valor valor `uc  1 p 1 wreg ]
+[v i2Transmitir_Numero@valor valor `uc  1 p 1 wreg ]
+[v i2Transmitir_Numero@valor valor `uc  1 p 1 8 ]
+"599
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbmod.c
-[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+[v i2___lbmod __lbmod `(uc  1 e 1 0 ]
 {
-[v ___lbmod@dividend dividend `uc  1 p 1 wreg ]
+[v i2___lbmod@dividend dividend `uc  1 p 1 wreg ]
 "6
-[v ___lbmod@rem rem `uc  1 a 1 7 ]
+[v i2___lbmod@rem rem `uc  1 a 1 7 ]
 "7
-[v ___lbmod@counter counter `uc  1 a 1 6 ]
+[v i2___lbmod@counter counter `uc  1 a 1 6 ]
 "4
-[v ___lbmod@dividend dividend `uc  1 p 1 wreg ]
-[v ___lbmod@divisor divisor `uc  1 p 1 4 ]
+[v i2___lbmod@dividend dividend `uc  1 p 1 wreg ]
+[v i2___lbmod@divisor divisor `uc  1 p 1 4 ]
 "9
-[v ___lbmod@dividend dividend `uc  1 p 1 5 ]
+[v i2___lbmod@dividend dividend `uc  1 p 1 5 ]
 "18
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lbdiv.c
-[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+[v i2___lbdiv __lbdiv `(uc  1 e 1 0 ]
 {
-[v ___lbdiv@dividend dividend `uc  1 p 1 wreg ]
+[v i2___lbdiv@dividend dividend `uc  1 p 1 wreg ]
 "6
-[v ___lbdiv@quotient quotient `uc  1 a 1 3 ]
+[v i2___lbdiv@quotient quotient `uc  1 a 1 3 ]
 "7
-[v ___lbdiv@counter counter `uc  1 a 1 2 ]
+[v i2___lbdiv@counter counter `uc  1 a 1 2 ]
 "4
-[v ___lbdiv@dividend dividend `uc  1 p 1 wreg ]
-[v ___lbdiv@divisor divisor `uc  1 p 1 0 ]
+[v i2___lbdiv@dividend dividend `uc  1 p 1 wreg ]
+[v i2___lbdiv@divisor divisor `uc  1 p 1 0 ]
 "9
-[v ___lbdiv@dividend dividend `uc  1 p 1 1 ]
+[v i2___lbdiv@dividend dividend `uc  1 p 1 1 ]
 "26
 } 0
-"600 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
-[v _Transmitir_Cadena Transmitir_Cadena `(v  1 e 1 0 ]
+"588 C:\Users\USER\Desktop\Archivos U\Microcontroladores\Microcontroladores\Laboratorios\Lab6\Laboratorio_6.X\Laboratorio_6.c
+[v i2_Transmitir_Cadena Transmitir_Cadena `(v  1 e 1 0 ]
 {
-[v Transmitir_Cadena@cadena cadena `*.32Cuc  1 p 2 1 ]
-"605
+[v i2Transmitir_Cadena@cadena cadena `*.32Cuc  1 p 2 1 ]
+"593
 } 0
-"595
-[v _Transmitir Transmitir `(v  1 e 1 0 ]
+"583
+[v i2_Transmitir Transmitir `(v  1 e 1 0 ]
 {
-[v Transmitir@BufferT BufferT `uc  1 p 1 wreg ]
-[v Transmitir@BufferT BufferT `uc  1 p 1 wreg ]
-[v Transmitir@BufferT BufferT `uc  1 p 1 0 ]
-"598
+[v i2Transmitir@BufferT BufferT `uc  1 p 1 wreg ]
+[v i2Transmitir@BufferT BufferT `uc  1 p 1 wreg ]
+[v i2Transmitir@BufferT BufferT `uc  1 p 1 0 ]
+"586
 } 0
-"613
+"601
 [v _ConversionADC ConversionADC `(uc  1 e 1 0 ]
 {
 [v ConversionADC@canal canal `uc  1 p 1 wreg ]
 [v ConversionADC@canal canal `uc  1 p 1 wreg ]
 [v ConversionADC@canal canal `uc  1 p 1 0 ]
-"620
+"608
 } 0

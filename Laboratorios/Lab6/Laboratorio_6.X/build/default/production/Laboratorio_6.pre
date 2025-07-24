@@ -5756,15 +5756,40 @@ Lcd_Char(pattern[i]);
 }
 }
 
+# 3 "EEPROM_Libreria.c"
+void EEPROM_Guardar(int dir, char data){
+EEADR = dir;
+EEDATA = data;
+EEPGD = 0;
+CFGS = 0;
+WREN = 1;
+GIE = 0;
+EECON2 = 0x55;
+EECON2 = 0x0AA;
+WR = 1;
+GIE = 1;
+while(!EEIF);
+EEIF = 0;
+WREN = 0;
+}
 
-# 5 "Laboratorio_6.c"
+unsigned char EEPROM_Lectura(int dir){
+EEADR = dir;
+EEPGD = 0;
+CFGS = 0;
+RD = 1;
+return EEDATA;
+}
+
+
+# 6 "Laboratorio_6.c"
 #pragma config FOSC = INTOSC_EC
 #pragma config WDT = OFF
 #pragma config LVP = OFF
 #pragma config PBADEN = OFF
 #pragma config BOR = OFF
 
-# 23
+# 24
 unsigned char etimeout = 0, ctimeout = 0;
 
 
@@ -5782,6 +5807,11 @@ unsigned int vle = 0;
 unsigned int EMOTOR = 0;
 
 unsigned char distancia =0;
+unsigned int saved_contador = 0;
+unsigned int saved_objetivo = 0;
+unsigned int POR2 = 0;
+
+
 
 const char mapa_teclas[17] = {
 0, '1', '4', '7', '*',
@@ -5860,34 +5890,7 @@ void mensaje_reset(void);
 void beep_corto(void);
 void beep_largo(void);
 unsigned char MedirDistancia(void);
-
-
-unsigned char MedirDistancia(void) {
-unsigned char aux = 0;
-CCP2CON = 0b00000100;
-TMR1 = 0;
-CCP2IF = 0;
-LATC0 = 1;
-_delay((unsigned long)((10)*(1000000/4000000.0)));
-LATC0 = 0;
-
-etimeout = 1;
-while(RC1 == 0 && etimeout == 1);
-if(etimeout == 0) return 0;
-
-TMR1ON = 1;
-while(!CCP2IF && !TMR1IF);
-TMR1ON = 0;
-
-if(TMR1IF) {
-TMR1IF = 0;
-aux = 255;
-} else {
-
-aux = CCPR2 / 14.5;
-}
-return aux;
-}
+void RestaurarOC (void);
 
 
 void main(void) {
@@ -5899,8 +5902,11 @@ _delay((unsigned long)((1000)*(1000000/4000.0)));
 mensaje_reset();
 inactividad = 0;
 lcd_animacion_bienvenida();
+if(POR2 == 1){
+RestaurarOC();
+}else{
 estado = 1;
-mostrar_valor();
+mostrar_valor();}
 
 while (1) {
 
@@ -5909,17 +5915,20 @@ distancia = MedirDistancia();
 if(distancia > 0 && distancia < 8) {
 if(estado == 2) {
 inactividad=0;
-if(contador < 59) contador++;
+if(contador < 59) {contador++;
+EEPROM_Guardar(10, contador);
+}
 if(contador % 10 == 0) beep_corto();
-
 if(contador >= objetivo) {
+EEPROM_Guardar(15, objetivo);
+EEPROM_Guardar(10, contador);
 mostrar_conteo();
 estado = 3;
 mostrar_completado();
 } else {
 mostrar_conteo();
 }
-_delay((unsigned long)((1000)*(1000000/4000.0)));
+_delay((unsigned long)((2000)*(1000000/4000.0)));
 }
 }
 
@@ -5963,6 +5972,8 @@ Lcd_Char((input % 10) + '0');
 if (input >= 1 && input <= 59) {
 objetivo = input;
 contador = 0;
+EEPROM_Guardar(15, objetivo);
+EEPROM_Guardar(10, contador);
 input = 0;
 estado = 2;
 mostrar_conteo();
@@ -5983,6 +5994,7 @@ estado = 3;
 mostrar_completado();
 } else if (tecla == 'A') {
 contador = 0;
+EEPROM_Guardar(10, contador);
 mostrar_conteo();
 }
 break;
@@ -6370,11 +6382,16 @@ Lcd_Clear();
 Lcd_Set_Cursor(1, 1);
 Lcd_String("Falla de energia");
 POR = 1;
+POR2 =1;
 _delay((unsigned long)((1500)*(1000000/4000.0)));
-} else {
+}
+
+else {
 Lcd_Clear();
 Lcd_Set_Cursor(1, 1);
 Lcd_String("Reset de usuario");
+POR = 1;
+POR2 =0;
 _delay((unsigned long)((1500)*(1000000/4000.0)));
 }
 }
@@ -6389,4 +6406,83 @@ void beep_largo(void) {
 LATA2 = 1;
 _delay((unsigned long)((500)*(1000000/4000.0)));
 LATA2 = 0;
+}
+unsigned char MedirDistancia(void) {
+unsigned char aux = 0;
+CCP2CON = 0b00000100;
+TMR1 = 0;
+CCP2IF = 0;
+LATC0 = 1;
+_delay((unsigned long)((10)*(1000000/4000000.0)));
+LATC0 = 0;
+
+etimeout = 1;
+while(RC1 == 0 && etimeout == 1);
+if(etimeout == 0) return 0;
+
+TMR1ON = 1;
+while(!CCP2IF && !TMR1IF);
+TMR1ON = 0;
+
+if(TMR1IF) {
+TMR1IF = 0;
+aux = 255;
+} else {
+
+aux = CCPR2 / 14.5;
+}
+return aux;
+}
+void RestaurarOC (void){
+
+
+Lcd_Clear();
+Lcd_Set_Cursor(1,1);
+Lcd_String("Restaurar conteo?");
+Lcd_Set_Cursor(2,1);
+Lcd_String("OK:Si  Borr:No");
+
+char tecla_restore = 0;
+while (tecla_restore == 0) {
+inactividad=0;
+if (Tecla != 0) {
+char t = mapa_teclas[Tecla];
+Tecla = 0;
+if (t == '#') tecla_restore = '#';
+else if (t == '*') tecla_restore = '*';
+}
+}
+
+if (tecla_restore == '#') {
+saved_contador = EEPROM_Lectura(10);
+saved_objetivo = EEPROM_Lectura(15);
+Transmitir_Numero(saved_contador);
+Transmitir_Cadena("\r\n");
+Transmitir_Numero(saved_objetivo);
+Transmitir_Cadena("\r\n");
+Lcd_Clear();
+contador = saved_contador;
+objetivo = saved_objetivo;
+
+if (objetivo == 0){ mostrar_valor();
+estado = 1;
+
+}
+else if (contador >= objetivo){ mostrar_completado();
+estado = 3;
+
+}
+else{ mostrar_conteo();
+
+estado = 2;
+
+
+}
+} else {
+mostrar_valor();
+contador = 0;
+objetivo = 0;
+estado = 1;
+
+}
 }
